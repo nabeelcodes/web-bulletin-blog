@@ -1,6 +1,20 @@
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
+const StyledSection = styled.section`
+  background-color: green;
+  height: ${({ setHeight }) => setHeight ?? '20vh'};
+`;
 
 export default function Home() {
+  const [reqHeight, setReqHeight] = useState(null);
+
+  useEffect(() => {
+    const viewportHeight = window.innerHeight;
+    setReqHeight(viewportHeight - 270);
+  }, [reqHeight]);
+
   return (
     <div>
       <Head>
@@ -9,9 +23,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Web Bulletin Blog Using Next and Strapi</h1>
-      </main>
+      <StyledSection setHeight={`${reqHeight}px`}>
+        <p>Web Bulletin Blog Using Next and Strapi</p>
+      </StyledSection>
     </div>
   );
 }

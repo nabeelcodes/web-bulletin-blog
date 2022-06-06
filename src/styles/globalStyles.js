@@ -8,16 +8,16 @@ export const GlobalStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    ::-webkit-scrollbar {
-    width: 8px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   /* SCROLL-BAR CSS : START */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
   ::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0);
   }
@@ -40,18 +40,18 @@ export const GlobalStyles = createGlobalStyle`
     
   body {
     font-family: ${({ theme }) => theme.fonts.main};
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 1.25rem;
+    font-size: 1rem;
     background: ${({ theme }) => theme.colors.background};
     color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,h2,h3,h4,h5,h6,button {
     font-family: ${({ theme }) => theme.fonts.main};
   }
 
-  p{
+  p {
     font-size: 1rem;
   }
 
@@ -61,7 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-  li{
+  li {
     list-style: none;
   }
 `;
