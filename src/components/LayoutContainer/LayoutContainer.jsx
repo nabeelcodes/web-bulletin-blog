@@ -6,7 +6,7 @@ export default function LayoutContainer({ children }) {
   return (
     <StyledLayoutContainer>
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
     </StyledLayoutContainer>
   );
