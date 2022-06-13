@@ -12,6 +12,14 @@ export default function Home() {
       </Head>
 
       <h1>Web Bulletin Blog Using Next and Strapi</h1>
+      <a href="https://www.google.com" target="_blank" rel="noreferrer">
+        this is a link to google
+      </a>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea non unde repellat repudiandae. Itaque, quod! Mollitia placeat
+        perspiciatis non eos, totam deserunt quia, aspernatur explicabo qui delectus praesentium numquam aliquid ducimus ex eveniet unde similique
+        quas dolorum suscipit fugiat molestiae aliquam culpa. Expedita necessitatibus molestias earum repellat neque labore?
+      </p>
     </>
   );
 }

@@ -1,9 +1,12 @@
-import { StyledHeader } from './Header.styled';
+import { StyledHeader, StyledLi } from './Header.styled';
 import { Container } from '../../styles/utilities';
 import NavLogo from '../NavLogo/NavLogo';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const router = useRouter();
+
   return (
     <StyledHeader>
       <Container flex width="80%" as="nav">
@@ -13,11 +16,15 @@ export default function Header() {
 
         <div className="navMenu">
           <ul>
-            <Link href="/" passHref>
-              <li>Blog</li>
+            <Link href="/">
+              <a>
+                <StyledLi activeLink={router.asPath === '/' ? true : false}>Blog</StyledLi>
+              </a>
             </Link>
-            <Link href="/about" passHref>
-              <li>About</li>
+            <Link href="/about">
+              <a>
+                <StyledLi activeLink={router.asPath === '/about' ? true : false}>About</StyledLi>
+              </a>
             </Link>
           </ul>
         </div>

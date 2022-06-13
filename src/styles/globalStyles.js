@@ -41,8 +41,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: ${({ theme }) => theme.fonts.main};
     font-size: 1rem;
-    background: ${({ theme }) => theme.colors.background};
-    color: #000;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.dark};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -53,11 +53,12 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   a {
     text-decoration: none;
-    color: #000;
+    color: ${({ theme }) => theme.colors.secondaryAccent};
     cursor: pointer;
   }
 

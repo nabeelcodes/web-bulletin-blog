@@ -6,10 +6,14 @@ export default {
 
   // Colors for the app
   colors: {
-    primaryText: '#121212',
-    primaryAccent: '#f8071f',
-    secondaryAccent: '#0f78bd',
-    background: 'rgb(255,255,255)'
+    primaryAccent: '#FF850A',
+    secondaryAccent: '#8B00FF',
+    background: '#FFFFFF',
+    backgroundDark: '#292929',
+    inactive: '#757575',
+    active: '#000000',
+    light: '#FFFFFF',
+    dark: '#000000'
   },
 
   // Breakpoints for responsive design
