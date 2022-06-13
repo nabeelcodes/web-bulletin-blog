@@ -1,6 +1,17 @@
 import Head from 'next/head';
+import { useContext, useEffect } from 'react';
+import TestComponent from '../components/TestComponent';
+import { BlogContext } from '../context/BlogContext';
 
-export default function Home() {
+export default function Home({ dataFromApi, notFound }) {
+  const { updateBlogList } = useContext(BlogContext);
+
+  useEffect(() => {
+    if (!notFound) {
+      updateBlogList(dataFromApi);
+    }
+  }, [dataFromApi, updateBlogList, notFound]);
+
   return (
     <>
       <Head>
@@ -12,14 +23,31 @@ export default function Home() {
       </Head>
 
       <h1>Web Bulletin Blog Using Next and Strapi</h1>
+
       <a href="https://www.google.com" target="_blank" rel="noreferrer">
         this is a link to google
       </a>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea non unde repellat repudiandae. Itaque, quod! Mollitia placeat
-        perspiciatis non eos, totam deserunt quia, aspernatur explicabo qui delectus praesentium numquam aliquid ducimus ex eveniet unde similique
-        quas dolorum suscipit fugiat molestiae aliquam culpa. Expedita necessitatibus molestias earum repellat neque labore?
-      </p>
+
+      <TestComponent />
     </>
   );
 }
+
+export const getStaticProps = async (ctx) => {
+  const BASE_URL = `https://jsonplaceholder.typicode.com`;
+  const responseFromApi = await fetch(`${BASE_URL}/posts?_limit=5`);
+  const data = await responseFromApi.json();
+
+  if (!data) {
+    return {
+      notFound: true
+    };
+  }
+
+  return {
+    props: {
+      dataFromApi: data,
+      notFound: false
+    }
+  };
+};
