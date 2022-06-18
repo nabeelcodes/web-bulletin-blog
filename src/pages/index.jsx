@@ -1,4 +1,5 @@
 import Head from 'next/head';
+<<<<<<< HEAD
 import { useContext, useEffect } from 'react';
 import TestComponent from '../components/TestComponent';
 import { BlogContext } from '../context/BlogContext';
@@ -11,17 +12,18 @@ export default function Home({ dataFromApi, notFound }) {
       updateBlogList(dataFromApi);
     }
   }, [dataFromApi, updateBlogList, notFound]);
+=======
+import { Container } from '../styles/utilities';
+>>>>>>> 16e2a728ef190ce72f26b15673255b7c8f8c6812
 
   return (
     <>
       <Head>
         <title>Web Bulletin</title>
-        <meta name="description" content="A simple and fast web blog built with NextJS and Strapi CMS. " />
-        {/* <meta property="og:image" content="https://i.imgur.com/Jtl3tJG.png" /> */}
         <meta property="og:title" content="Web Bulletin"></meta>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
+<<<<<<< HEAD
       <h1>Web Bulletin Blog Using Next and Strapi</h1>
 
       <a href="https://www.google.com" target="_blank" rel="noreferrer">
@@ -29,6 +31,15 @@ export default function Home({ dataFromApi, notFound }) {
       </a>
 
       <TestComponent />
+=======
+      <Container width="70%">
+        <h1>Web Bulletin Blog Using Next and Strapi</h1>
+
+        <a href="https://www.google.com" target="_blank" rel="noreferrer">
+          this is a link to google
+        </a>
+      </Container>
+>>>>>>> 16e2a728ef190ce72f26b15673255b7c8f8c6812
     </>
   );
 }

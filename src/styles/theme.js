@@ -6,11 +6,12 @@ export default {
 
   // Colors for the app
   colors: {
-    primaryAccent: '#FF850A',
+    primaryAccent: '#FEA93C',
     secondaryAccent: '#8B00FF',
-    background: '#FFFFFF',
-    backgroundDark: '#292929',
-    inactive: '#757575',
+    backgroundLight: '#FFFFFF',
+    backgroundDark: '#2E2E2E',
+    backgroundDarker: '#242526',
+    inactive: '#727272',
     active: '#000000',
     light: '#FFFFFF',
     dark: '#000000'

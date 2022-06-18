@@ -34,14 +34,14 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     @media screen and (hover: none) and (pointer: coarse) {
-      -webkit-tap-highlight-color: transparent; 
+      -webkit-tap-higDark-color: transparent; 
     }
   }
     
   body {
     font-family: ${({ theme }) => theme.fonts.main};
     font-size: 1rem;
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.backgroundLight};
     color: ${({ theme }) => theme.colors.dark};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
