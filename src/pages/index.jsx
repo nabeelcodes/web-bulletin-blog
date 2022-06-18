@@ -2,20 +2,16 @@ import Head from 'next/head';
 import { Container } from '../styles/utilities';
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Web Bulletin</title>
-        <meta property="og:title" content="Web Bulletin"></meta>
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>Web Bulletin</title>
+				<meta property='og:title' content='Web Bulletin'></meta>
+			</Head>
 
-      <Container width="70%">
-        <h1>Web Bulletin Blog Using Next and Strapi</h1>
-
-        <a href="https://www.google.com" target="_blank" rel="noreferrer">
-          this is a link to google
-        </a>
-      </Container>
-    </>
-  );
+			<Container width='70%'>
+				<h1>Web Bulletin Blog Using Next and Strapi</h1>
+			</Container>
+		</>
+	);
 }
