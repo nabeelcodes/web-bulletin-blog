@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '../../styles/utilities';
+import { useContext } from 'react';
+import { BlogContext } from '../../context/BlogContext';
 
 const cssStyles = {
 	border: '2px solid #8b00ff',
@@ -10,7 +12,9 @@ const cssStyles = {
 	cursor: 'pointer'
 };
 
-export default function BlogList({ blogs }) {
+export default function BlogList() {
+	const { blogList } = useContext(BlogContext);
+
 	return (
 		<>
 			<Head>
@@ -19,8 +23,9 @@ export default function BlogList({ blogs }) {
 			</Head>
 
 			<Container width='70%'>
-				{blogs.length > 0 &&
-					blogs.map((blog) => (
+				{blogList &&
+					blogList.length > 0 &&
+					blogList.map((blog) => (
 						<Link key={blog.id} href={`blogs/${blog.id}`}>
 							<a>
 								<div style={cssStyles}>
@@ -34,22 +39,3 @@ export default function BlogList({ blogs }) {
 		</>
 	);
 }
-
-export const getStaticProps = async () => {
-	const res = await fetch(`https://api-blog-strapi-next.herokuapp.com/api/posts?populate=*`);
-
-	if (!res.ok) {
-		return {
-			notFound: true
-		};
-	}
-
-	const dataFromApi = await res.json();
-
-	return {
-		props: {
-			blogs: dataFromApi.data,
-			metaData: dataFromApi.meta
-		}
-	};
-};

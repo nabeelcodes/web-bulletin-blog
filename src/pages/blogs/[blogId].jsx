@@ -12,7 +12,7 @@ export default function Blog({ blogPageData }) {
 
 export const getStaticProps = async (ctx) => {
 	const { params } = ctx;
-	const res = await fetch(`https://api-blog-strapi-next.herokuapp.com/ap/posts/${params.blogId}?populate=*`);
+	const res = await fetch(`https://api-blog-strapi-next.herokuapp.com/api/posts/${params.blogId}?populate=*`);
 
 	if (!res.ok) {
 		return {
