@@ -33,3 +33,4 @@ yarn-error.log*
 
 # others
 .key
+strapiApiData.json

@@ -4,6 +4,7 @@ import { BlogContext } from '../context/BlogContext';
 import { Container } from '../styles/utilities';
 import TestComponent from '../components/TestComponent';
 
+<<<<<<< HEAD
 export default function Home({ dataFromApi, notFound }) {
 	const { updateBlogList } = useContext(BlogContext);
 
@@ -13,21 +14,31 @@ export default function Home({ dataFromApi, notFound }) {
 		}
 	}, [dataFromApi, updateBlogList, notFound]);
 
+=======
+export default function Home() {
+>>>>>>> 58a8246153dd50c4a0620915589b60919aaa9117
 	return (
 		<>
 			<Head>
 				<title>Web Bulletin</title>
+<<<<<<< HEAD
 				<meta property='og:title' content='Web Bulletin'></meta>
+=======
+				<meta property='og:title' content='Web Bulletin' />
+>>>>>>> 58a8246153dd50c4a0620915589b60919aaa9117
 			</Head>
 
 			<Container width='70%'>
 				<h1>Web Bulletin Blog Using Next and Strapi</h1>
+<<<<<<< HEAD
 
 				<a href='https://www.google.com' target='_blank' rel='noreferrer'>
 					this is a link to google
 				</a>
 
 				<TestComponent />
+=======
+>>>>>>> 58a8246153dd50c4a0620915589b60919aaa9117
 			</Container>
 		</>
 	);
