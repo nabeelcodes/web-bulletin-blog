@@ -58,7 +58,6 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.secondaryAccent};
     cursor: pointer;
   }
 
