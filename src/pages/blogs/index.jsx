@@ -48,7 +48,7 @@ export const getStaticProps = async () => {
 
 	return {
 		props: {
-			blogs: dataFromApi.data,
+			blogs: dataFromApi.data.reverse(),
 			metaData: dataFromApi.meta
 		}
 	};
