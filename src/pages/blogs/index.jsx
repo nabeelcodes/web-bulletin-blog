@@ -1,14 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import BlogCard from '../../components/BlogCard/BlogCard';
 import { Container } from '../../styles/utilities';
 
-const cssStyles = {
-	border: '2px solid #8b00ff',
-	borderRadius: '8px',
-	padding: '1rem 1.5rem',
-	margin: '1rem 0',
-	cursor: 'pointer'
-};
+const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
 export default function BlogList({ blogs }) {
 	return (
@@ -21,12 +16,9 @@ export default function BlogList({ blogs }) {
 			<Container width='70%'>
 				{blogs.length > 0 &&
 					blogs.map((blog) => (
-						<Link key={blog.id} href={`blogs/${blog.id}`}>
+						<Link key={blog.id} href={`/blogs/${blog.id}`}>
 							<a>
-								<div style={cssStyles}>
-									<h3>{blog.attributes.title}</h3>
-									<p>{blog.attributes.description}</p>
-								</div>
+								<BlogCard blogDetails={blog} />
 							</a>
 						</Link>
 					))}
@@ -36,7 +28,7 @@ export default function BlogList({ blogs }) {
 }
 
 export const getStaticProps = async () => {
-	const res = await fetch(`https://api-blog-strapi-next.herokuapp.com/api/posts?populate=*`);
+	const res = await fetch(`${BASE_URL}/posts`);
 
 	if (!res.ok) {
 		return {
