@@ -4,7 +4,8 @@ import Image from 'next/image';
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
 Blog.getInitialProps = async (ctx) => {
-	const { blogId } = ctx.params;
+	console.log(ctx.query);
+	const { blogId } = ctx.query;
 	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
 
 	if (!res.ok) {
@@ -41,41 +42,3 @@ export default function Blog({ blogPageData }) {
 		</Container>
 	);
 }
-
-// export const getStaticPaths = async () => {
-// 	const res = await fetch(`${BASE_URL}/posts`);
-// 	const dataFromApi = await res.json();
-
-// 	const paths = dataFromApi.data.map((blogList) => {
-// 		return {
-// 			params: {
-// 				blogId: `${blogList.id}`
-// 			}
-// 		};
-// 	});
-
-// 	return {
-// 		paths,
-// 		fallback: false
-// 	};
-// };
-
-// export const getStaticProps = async (ctx) => {
-// 	const { blogId } = ctx.params;
-// 	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
-
-// 	if (!res.ok) {
-// 		return {
-// 			notFound: true
-// 		};
-// 	}
-
-// 	const dataFromApi = await res.json();
-
-// 	return {
-// 		props: {
-// 			blogPageData: dataFromApi.data
-// 		},
-// 		revalidate: 15
-// 	};
-// };
