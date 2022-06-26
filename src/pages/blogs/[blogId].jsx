@@ -58,6 +58,7 @@ export const getStaticProps = async (ctx) => {
 	return {
 		props: {
 			blogPageData: dataFromApi.data
-		}
+		},
+		revalidate: 15
 	};
 };

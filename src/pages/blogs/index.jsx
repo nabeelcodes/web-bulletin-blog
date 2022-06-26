@@ -42,6 +42,7 @@ export const getStaticProps = async () => {
 		props: {
 			blogs: dataFromApi.data.reverse(),
 			metaData: dataFromApi.meta
-		}
+		},
+		revalidate: 15
 	};
 };
