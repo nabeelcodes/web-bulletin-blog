@@ -3,6 +3,23 @@ import Image from 'next/image';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
+Blog.getInitialProps = async (ctx) => {
+	const { blogId } = ctx.params;
+	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
+
+	if (!res.ok) {
+		return {
+			notFound: true
+		};
+	}
+
+	const dataFromApi = await res.json();
+
+	return {
+		blogPageData: dataFromApi.data
+	};
+};
+
 export default function Blog({ blogPageData }) {
 	const { title, description } = blogPageData.attributes;
 	const { url, alternativeText, width, height } = blogPageData.attributes.images.data.attributes;
@@ -25,40 +42,40 @@ export default function Blog({ blogPageData }) {
 	);
 }
 
-export const getStaticPaths = async () => {
-	const res = await fetch(`${BASE_URL}/posts`);
-	const dataFromApi = await res.json();
+// export const getStaticPaths = async () => {
+// 	const res = await fetch(`${BASE_URL}/posts`);
+// 	const dataFromApi = await res.json();
 
-	const paths = dataFromApi.data.map((blogList) => {
-		return {
-			params: {
-				blogId: `${blogList.id}`
-			}
-		};
-	});
+// 	const paths = dataFromApi.data.map((blogList) => {
+// 		return {
+// 			params: {
+// 				blogId: `${blogList.id}`
+// 			}
+// 		};
+// 	});
 
-	return {
-		paths,
-		fallback: false
-	};
-};
+// 	return {
+// 		paths,
+// 		fallback: false
+// 	};
+// };
 
-export const getStaticProps = async (ctx) => {
-	const { blogId } = ctx.params;
-	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
+// export const getStaticProps = async (ctx) => {
+// 	const { blogId } = ctx.params;
+// 	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
 
-	if (!res.ok) {
-		return {
-			notFound: true
-		};
-	}
+// 	if (!res.ok) {
+// 		return {
+// 			notFound: true
+// 		};
+// 	}
 
-	const dataFromApi = await res.json();
+// 	const dataFromApi = await res.json();
 
-	return {
-		props: {
-			blogPageData: dataFromApi.data
-		},
-		revalidate: 15
-	};
-};
+// 	return {
+// 		props: {
+// 			blogPageData: dataFromApi.data
+// 		},
+// 		revalidate: 15
+// 	};
+// };
