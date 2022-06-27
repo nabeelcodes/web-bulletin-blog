@@ -16,7 +16,7 @@ export default function BlogList({ blogs }) {
 			<Container width='70%'>
 				{blogs.length > 0 &&
 					blogs.map((blog) => (
-						<Link key={blog.id} href={`/blogs/${blog.id}`}>
+						<Link key={blog?.id} href={`/blogs/${blog?.id}`}>
 							<a>
 								<BlogCard blogDetails={blog} />
 							</a>
@@ -30,18 +30,18 @@ export default function BlogList({ blogs }) {
 export const getStaticProps = async () => {
 	const res = await fetch(`${BASE_URL}/posts`);
 
-	if (!res.ok) {
+	if (!res?.ok) {
 		return {
 			notFound: true
 		};
 	}
 
-	const dataFromApi = await res.json();
+	const dataFromApi = await res?.json();
 
 	return {
 		props: {
-			blogs: dataFromApi.data.reverse(),
-			metaData: dataFromApi.meta
+			blogs: dataFromApi?.data?.reverse(),
+			metaData: dataFromApi?.meta
 		},
 		revalidate: 15
 	};
