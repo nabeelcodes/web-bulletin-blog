@@ -20,16 +20,16 @@ export default function Header() {
 
 				<div className='navMenu'>
 					<ul>
-						<Link href='/blogs'>
-							<a>
-								<StyledLi activeLink={router.asPath === '/blogs' ? true : false}>Blogs</StyledLi>
-							</a>
-						</Link>
-						<Link href='/about'>
-							<a>
-								<StyledLi activeLink={router.asPath === '/about' ? true : false}>About</StyledLi>
-							</a>
-						</Link>
+						<StyledLi activeLink={router.asPath === '/blogs' ? true : false}>
+							<Link href='/blogs'>
+								<a>Blogs</a>
+							</Link>
+						</StyledLi>
+						<StyledLi activeLink={router.asPath === '/about' ? true : false}>
+							<Link href='/about'>
+								<a>About</a>
+							</Link>
+						</StyledLi>
 					</ul>
 				</div>
 			</Container>

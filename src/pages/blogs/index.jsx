@@ -15,13 +15,18 @@ export default function BlogList({ blogs }) {
 
 			<Container width='70%'>
 				{blogs.length > 0 &&
-					blogs.map((blog) => (
-						<Link key={blog?.id} href={`/blogs/${blog?.id}`}>
-							<a>
-								<BlogCard blogDetails={blog} />
-							</a>
-						</Link>
-					))}
+					blogs.map((blog) => {
+						const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
+						const shallowUrl = blog?.attributes?.title.replaceAll(regexPatternToReplace, '-').toLowerCase();
+
+						return (
+							<Link key={blog?.id} href={`/blogs/${blog?.id}-${shallowUrl}`}>
+								<a>
+									<BlogCard blogDetails={blog} />
+								</a>
+							</Link>
+						);
+					})}
 			</Container>
 		</>
 	);

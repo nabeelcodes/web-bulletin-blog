@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { Container } from '../../styles/utilities';
 import Image from 'next/image';
+import { Container } from '../../styles/utilities';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
 Blog.getInitialProps = async (ctx) => {
-	const { blogId } = ctx.query;
+	const blogId = ctx.query.blogId.split('-')[0];
 	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
 
 	if (!res?.ok) {
@@ -23,16 +21,8 @@ Blog.getInitialProps = async (ctx) => {
 };
 
 export default function Blog({ blogPageData }) {
-	const router = useRouter();
-	const { title, description } = blogPageData?.attributes;
+	const { title, description, content } = blogPageData?.attributes;
 	const { url, alternativeText, width, height } = blogPageData?.attributes?.images?.data?.attributes;
-
-	useEffect(() => {
-		/* This useEffect is used to mask the url of this page from `/blogs/[blogId]` to `/blogs/${title}` */
-		const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
-		const shallowUrl = title.replaceAll(regexPatternToReplace, '-').toLowerCase();
-		router.push(`/blogs/${shallowUrl}`, undefined, { shallow: true });
-	}, [title]);
 
 	return (
 		<Container width='70%'>
