@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
 import { Container } from '../../styles/utilities';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
@@ -40,6 +41,7 @@ export default function Blog({ blogPageData }) {
 			<h2>{title}</h2>
 			<p>{description}</p>
 			<br />
+			<MarkdownContent contentToParse={content} />
 		</Container>
 	);
 }

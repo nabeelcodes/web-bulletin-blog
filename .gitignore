@@ -36,3 +36,4 @@ yarn-error.log*
 .vscode/*
 .key
 strapiApiData.json
+test.md
