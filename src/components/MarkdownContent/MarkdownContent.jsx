@@ -1,12 +1,12 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { githubGist } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { MarkdownWrapper } from './MarkdownContent.styled';
 
 const CodeHighlight = ({ inline, className, children }) => {
 	return !inline ? (
-		<SyntaxHighlighter style={docco} language={className} PreTag='div'>
+		<SyntaxHighlighter style={githubGist} language={className} PreTag='div'>
 			{children[0]}
 		</SyntaxHighlighter>
 	) : (
