@@ -10,7 +10,7 @@ export default function Home() {
 			</Head>
 
 			<Container width='70%'>
-				<h1>Web Bulletin Blog Using Next and Strapi</h1>
+				<h1 style={{ fontSize: '5rem' }}>Web Bulletin Blog Using Next and Strapi</h1>
 			</Container>
 		</>
 	);
