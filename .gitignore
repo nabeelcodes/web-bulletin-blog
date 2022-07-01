@@ -32,8 +32,7 @@ yarn-error.log*
 .vercel
 
 # others
-.yarn/*
-.vscode/*
+.vscode
 .key
 strapiApiData.json
 test.md

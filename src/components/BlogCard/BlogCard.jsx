@@ -1,12 +1,12 @@
-import { Card } from './BlogCard.styled';
+import { StyledBlogCard } from './BlogCard.styled';
 
 export default function BlogCard({ blogDetails }) {
 	const { title, description } = blogDetails.attributes;
 
 	return (
-		<Card>
+		<StyledBlogCard>
 			<h3>{title}</h3>
 			<p>{description}</p>
-		</Card>
+		</StyledBlogCard>
 	);
 }

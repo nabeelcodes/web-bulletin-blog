@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MarkdownWrapper = styled.article`
+export const StyledMarkdownContent = styled.article`
 	border: 2.5px solid black;
 	border-radius: 5px;
 	padding: 0 0.5em;
@@ -14,7 +14,6 @@ export const MarkdownWrapper = styled.article`
 	}
 
 	pre div {
-		font-family: monospace;
 		background-color: rgba(0, 0, 0, 0.05) !important;
 		font-size: 0.85em;
 		border-radius: 3px;
@@ -28,8 +27,11 @@ export const MarkdownWrapper = styled.article`
 		white-space: pre;
 	}
 
+	code span {
+		${({ theme }) => theme.fonts.mono};
+	}
+
 	p code {
-		font-family: monospace;
 		background-color: rgba(0, 0, 0, 0.05);
 		border-radius: 3px;
 		padding: 2px 4px;

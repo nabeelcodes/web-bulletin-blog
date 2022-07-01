@@ -5,6 +5,7 @@ import { Container } from '../../styles/utilities';
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
 Blog.getInitialProps = async (ctx) => {
+	/* extracting numeric value of blogId from ctx */
 	const blogId = ctx.query.blogId.split('-')[0];
 	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
 

@@ -5,14 +5,21 @@ export const GlobalStyles = createGlobalStyle`
 
   ${normalize}
 
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  /* custom font import(self hosted font) */
+  @font-face {
+    font-family: "ttnormspromono", sans-serif;
+    src: url("/fonts/TT Norms Pro Mono.woff2") format("woff2"),
   }
-
+  @font-face {
+    font-family: 'tthovesvar';
+    src: url('/fonts/TT Hoves Variable.woff2') format('woff2 supports variations'),
+         url('/fonts/TT Hoves Variable.woff2') format('woff2');
+    font-weight: 100 950;
+    font-stretch: 75% 125%;
+    font-display: swap;
+    font-style: oblique 0deg 20deg;
+  }
+  
   /* SCROLL-BAR CSS : START */
   ::-webkit-scrollbar {
     width: 8px;
@@ -32,6 +39,14 @@ export const GlobalStyles = createGlobalStyle`
   }
   /* SCROLL-BAR CSS : END */
 
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   html {
     @media screen and (hover: none) and (pointer: coarse) {
       -webkit-tap-higDark-color: transparent; 
@@ -39,10 +54,10 @@ export const GlobalStyles = createGlobalStyle`
   }
     
   body {
-    font-family: ${({ theme }) => theme.fonts.main};
-    font-size: 1rem;
     background-color: ${({ theme }) => theme.colors.backgroundLight};
     color: ${({ theme }) => theme.colors.dark};
+    font-family: ${({ theme }) => theme.fonts.main};
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

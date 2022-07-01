@@ -32,9 +32,8 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang='en'>
 				<Head>
-					<link rel='preconnect' href='https://fonts.googleapis.com' />
-					<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin={+true} />
-					<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap' rel='stylesheet' />
+					{/* Preload custom hosted fonts from /public folder to reduce FCP time */}
+					<link rel='preload' href='/fonts/TT Hoves Variable.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
 					<link rel='icon' href='/favicon.ico' />
 					<meta name='description' content='A simple and fast web blog built with NextJS and Strapi CMS. ' />
 					{/* <meta property="og:image" content="https://i.imgur.com/Jtl3tJG.png" /> */}
