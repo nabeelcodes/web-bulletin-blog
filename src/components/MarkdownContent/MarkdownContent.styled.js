@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledMarkdownContent = styled.article`
-	border: 2.5px solid black;
-	border-radius: 5px;
-	padding: 0 0.5em;
 	margin: 1em 0;
 
 	*,
@@ -22,13 +19,8 @@ export const StyledMarkdownContent = styled.article`
 	pre code {
 		display: block;
 		padding: 1em;
-		-webkit-text-size-adjust: none;
-		overflow-x: auto;
+		overflow-x: scroll;
 		white-space: pre;
-	}
-
-	code span {
-		${({ theme }) => theme.fonts.mono};
 	}
 
 	p code {
@@ -36,6 +28,12 @@ export const StyledMarkdownContent = styled.article`
 		border-radius: 3px;
 		padding: 2px 4px;
 		font-size: 0.85em;
+	}
+
+	code {
+		font-family: ${({ theme }) => theme.fonts.mono};
+		font-weight: 500;
+		-webkit-text-size-adjust: none;
 	}
 
 	table {

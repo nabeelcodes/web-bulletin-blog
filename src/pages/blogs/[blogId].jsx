@@ -27,7 +27,7 @@ export default function Blog({ blogPageData }) {
 	const { url, alternativeText, width, height } = blogPageData?.attributes?.images?.data?.attributes;
 
 	return (
-		<Container width='70%'>
+		<Container width='70%' blogDetailsPage>
 			<br />
 			<Image
 				src={url}

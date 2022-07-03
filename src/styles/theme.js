@@ -2,8 +2,8 @@
 
 export default {
 	fonts: {
-		main: 'tthovesvar, sans-serif',
-		mono: 'ttnormspromono, monospace'
+		main: 'tthovesvar, system-ui, sans-serif',
+		mono: 'jetbrainsmono, monospace'
 	},
 
 	// Colors for the app

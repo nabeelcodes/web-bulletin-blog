@@ -7,22 +7,26 @@ export const GlobalStyles = createGlobalStyle`
 
   /* custom font import(self hosted font) */
   @font-face {
-    font-family: "ttnormspromono", sans-serif;
-    src: url("/fonts/TT Norms Pro Mono.woff2") format("woff2"),
+    font-family: 'jetbrainsmono';
+    src: url('/fonts/JetBrainsMono.woff2') format('woff2 supports variations'),
+         url('/fonts/JetBrainsMono.woff2') format('woff2');
+    font-weight: 100 950;
+    font-display: optional;
+    font-style: normal;
   }
   @font-face {
     font-family: 'tthovesvar';
     src: url('/fonts/TTHovesVariable.woff2') format('woff2 supports variations'),
          url('/fonts/TTHovesVariable.woff2') format('woff2');
     font-weight: 100 950;
-    /* font-stretch: 75% 125%; */
     font-display: optional;
     font-style: normal;
   }
   
   /* SCROLL-BAR CSS : START */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
+    height: 4px;
   }
 
   ::-webkit-scrollbar-track {
