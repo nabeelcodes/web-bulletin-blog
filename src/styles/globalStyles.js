@@ -12,12 +12,12 @@ export const GlobalStyles = createGlobalStyle`
   }
   @font-face {
     font-family: 'tthovesvar';
-    src: url('/fonts/TT Hoves Variable.woff2') format('woff2 supports variations'),
-         url('/fonts/TT Hoves Variable.woff2') format('woff2');
+    src: url('/fonts/TTHovesVariable.woff2') format('woff2 supports variations'),
+         url('/fonts/TTHovesVariable.woff2') format('woff2');
     font-weight: 100 950;
-    font-stretch: 75% 125%;
-    font-display: swap;
-    font-style: oblique 0deg 20deg;
+    /* font-stretch: 75% 125%; */
+    font-display: optional;
+    font-style: normal;
   }
   
   /* SCROLL-BAR CSS : START */

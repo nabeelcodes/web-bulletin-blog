@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
+module.exports = {
 	reactStrictMode: true,
 	compiler: {
 		styledComponents: true
@@ -11,7 +9,7 @@ const nextConfig = {
 	async headers() {
 		return [
 			{
-				source: '/fonts/TT Hoves Variable.woff2',
+				source: '/fonts/TTHovesVariable.woff2',
 				headers: [
 					{
 						key: 'Cache-Control',
@@ -22,5 +20,3 @@ const nextConfig = {
 		];
 	}
 };
-
-export default nextConfig;
