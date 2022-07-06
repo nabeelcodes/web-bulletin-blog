@@ -93,5 +93,10 @@ export const StyledMarkdownContent = styled.article`
 
 	@media ${({ theme }) => theme.breakpoints.sm} {
 		width: 90%;
+
+		p,
+		li {
+			font-size: 1rem;
+		}
 	}
 `;

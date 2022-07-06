@@ -12,7 +12,7 @@ export default function Header() {
 			<Container flex width='80%' as='nav'>
 				<div className='navBrand'>
 					<Link href='/'>
-						<a>
+						<a aria-label='Click on this logo to goto Homepage'>
 							<NavLogo />
 						</a>
 					</Link>

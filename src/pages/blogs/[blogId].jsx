@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
-import { Container, StyledBlogDetailsPage } from '../../styles/utilities';
+import { Container } from '../../styles/utilities';
+import { StyledBlogDetailsPage } from '../../styles/BlogId.styled';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
@@ -29,29 +31,37 @@ export default function Blog({ blogPageData }) {
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 
 	return (
-		<StyledBlogDetailsPage>
-			<div className='blogDetailsOuterWrapper'>
-				<Container width='80%' flex>
-					<div className='blogDetailsInnerWrapper'>
-						<time className='publishingDate'>{blogPublishingDate}</time>
+		<>
+			<Head>
+				<title>{title}</title>
+				<meta property='og:title' content={title} />
+				<base target='_blank' rel='noopener noreferrer' />
+			</Head>
 
-						<h1 className='blogTitle'>{title}</h1>
+			<StyledBlogDetailsPage>
+				<div className='blogDetailsOuterWrapper'>
+					<Container width='80%' flex>
+						<div className='blogDetailsInnerWrapper'>
+							<time className='publishingDate'>{blogPublishingDate}</time>
 
-						<p className='blogDescription'>{description}</p>
-					</div>
+							<h1 className='blogTitle'>{title}</h1>
 
-					<Image
-						src={url}
-						alt={alternativeText}
-						width={580}
-						height={300}
-						placeholder='blur'
-						blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
-					/>
-				</Container>
-			</div>
+							<p className='blogDescription'>{description}</p>
+						</div>
 
-			<MarkdownContent contentToParse={content} />
-		</StyledBlogDetailsPage>
+						<Image
+							src={url}
+							alt={alternativeText}
+							width={580}
+							height={300}
+							placeholder='blur'
+							blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
+						/>
+					</Container>
+				</div>
+
+				<MarkdownContent contentToParse={content} />
+			</StyledBlogDetailsPage>
+		</>
 	);
 }
