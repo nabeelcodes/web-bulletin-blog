@@ -33,7 +33,8 @@ export default function BlogList({ blogs }) {
 }
 
 export const getStaticProps = async () => {
-	const res = await fetch(`${BASE_URL}/posts`);
+	/* fetching list of SORTED(by id) blog posts using REST API endpoints */
+	const res = await fetch(`${BASE_URL}/posts?sort=id:desc`);
 
 	if (!res?.ok) {
 		return {
@@ -45,7 +46,7 @@ export const getStaticProps = async () => {
 
 	return {
 		props: {
-			blogs: dataFromApi?.data?.reverse(),
+			blogs: dataFromApi?.data,
 			metaData: dataFromApi?.meta
 		},
 		revalidate: 15

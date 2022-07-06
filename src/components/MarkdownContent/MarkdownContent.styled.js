@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledMarkdownContent = styled.article`
-	margin: 1em 0;
+	width: 55%;
+	margin-inline: auto;
+	margin-bottom: 1em;
 
 	*,
 	*::before,
@@ -23,7 +25,8 @@ export const StyledMarkdownContent = styled.article`
 		white-space: pre;
 	}
 
-	p code {
+	p code,
+	li code {
 		background-color: rgba(0, 0, 0, 0.05);
 		border-radius: 3px;
 		padding: 2px 4px;
@@ -49,18 +52,46 @@ export const StyledMarkdownContent = styled.article`
 		padding: 1rem;
 	}
 
+	p,
+	li {
+		font-size: 1.12rem;
+		line-height: 1.7rem;
+	}
+
 	li {
 		list-style: disc;
 		margin: 0.4rem;
 	}
 
 	blockquote {
+		font-style: italic;
+		margin: 0;
 		padding: 0 1em;
 		color: #6a737d;
 		border-left: 0.25em solid #dfe2e5;
 	}
 
+	a {
+		color: ${({ theme }) => theme.colors.secondaryAccent};
+	}
+
+	h2 {
+		font-weight: 550;
+	}
+
 	.left {
 		text-align: left;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.ipad} {
+		width: 75%;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.md} {
+		width: 80%;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.sm} {
+		width: 90%;
 	}
 `;

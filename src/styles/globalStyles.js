@@ -84,4 +84,8 @@ export const GlobalStyles = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  strong {
+    font-weight: 650;
+  }
 `;

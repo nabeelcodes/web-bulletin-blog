@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
-import { Container } from '../../styles/utilities';
+import { Container, StyledBlogDetailsPage } from '../../styles/utilities';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
@@ -23,26 +23,35 @@ Blog.getInitialProps = async (ctx) => {
 };
 
 export default function Blog({ blogPageData }) {
-	const { title, description, content } = blogPageData?.attributes;
+	const { title, description, content, published_on } = blogPageData?.attributes;
 	const { url, alternativeText, width, height } = blogPageData?.attributes?.images?.data?.attributes;
 
+	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
+
 	return (
-		<Container width='70%' blogDetailsPage>
-			<br />
-			<Image
-				src={url}
-				alt={alternativeText}
-				width={width}
-				height={height}
-				placeholder='blur'
-				blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
-			/>
-			<br />
-			<br />
-			<h2>{title}</h2>
-			<p>{description}</p>
-			<br />
+		<StyledBlogDetailsPage>
+			<div className='blogDetailsOuterWrapper'>
+				<Container width='80%' flex>
+					<div className='blogDetailsInnerWrapper'>
+						<time className='publishingDate'>{blogPublishingDate}</time>
+
+						<h1 className='blogTitle'>{title}</h1>
+
+						<p className='blogDescription'>{description}</p>
+					</div>
+
+					<Image
+						src={url}
+						alt={alternativeText}
+						width={580}
+						height={300}
+						placeholder='blur'
+						blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
+					/>
+				</Container>
+			</div>
+
 			<MarkdownContent contentToParse={content} />
-		</Container>
+		</StyledBlogDetailsPage>
 	);
 }
