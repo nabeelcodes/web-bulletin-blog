@@ -49,7 +49,11 @@ export const StyledMarkdownContent = styled.article`
 	th {
 		border: 1px solid #555;
 		text-align: center;
-		padding: 1rem;
+	}
+
+	th,
+	td {
+		padding: 1rem 0;
 	}
 
 	p,
@@ -58,8 +62,12 @@ export const StyledMarkdownContent = styled.article`
 		line-height: 1.7rem;
 	}
 
+	& > ul,ol {
+		padding-left: 1.5em;
+	}
+
 	li {
-		list-style: disc;
+		list-style: unset;
 		margin: 0.4rem;
 	}
 
