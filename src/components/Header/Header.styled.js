@@ -21,6 +21,20 @@ export const StyledHeader = styled.header`
 		display: flex;
 		gap: 1rem;
 	}
+
+	@media ${({ theme }) => theme.breakpoints.sm} {
+		nav {
+			width: 91%;
+		}
+
+		.navMenu ul {
+			gap: 0;
+
+			li:nth-child(2) {
+				padding-inline: 0.3rem;
+			}
+		}
+	}
 `;
 
 export const StyledLi = styled.li`

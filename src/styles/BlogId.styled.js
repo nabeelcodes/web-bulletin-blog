@@ -19,6 +19,7 @@ export const StyledBlogDetailsPage = styled.section`
 	}
 
 	.blogDescription {
+		color: #000000b5;
 		font-size: 1.12rem;
 		line-height: 1.7rem;
 	}
@@ -78,7 +79,7 @@ export const StyledBlogDetailsPage = styled.section`
 		}
 
 		.blogDetailsInnerWrapper {
-			margin: 0px 2rem;
+			margin: 0px 1.22rem;
 
 			.publishingDate {
 				font-size: 1rem;

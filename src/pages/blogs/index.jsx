@@ -13,7 +13,7 @@ export default function BlogList({ blogs }) {
 				<meta property='og:title' content='Web Bulletin Blogs' />
 			</Head>
 
-			<Container width='70%'>
+			<Container width='70%' as='section' blogListContainer>
 				{blogs.length > 0 &&
 					blogs.map((blog) => {
 						const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
