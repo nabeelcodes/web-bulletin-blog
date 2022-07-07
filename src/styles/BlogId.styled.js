@@ -7,10 +7,25 @@ export const StyledBlogDetailsPage = styled.section`
 		background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
 		padding: 4rem 0;
 		margin-bottom: 4rem;
+
+		& > div {
+			gap: 2rem;
+		}
+	}
+
+	.bannerImageWrapper {
+		max-width: 60%;
+		max-height: 325px;
+		overflow: hidden;
+		border-radius: 5px;
+
+		img {
+			border-radius: 5px;
+		}
 	}
 
 	.blogDetailsInnerWrapper {
-		max-width: 28rem;
+		max-width: 40%;
 	}
 
 	.blogTitle {
@@ -34,10 +49,6 @@ export const StyledBlogDetailsPage = styled.section`
 		border-radius: 5px;
 	}
 
-	img {
-		border-radius: 5px;
-	}
-
 	@media ${({ theme }) => theme.breakpoints.ipad} {
 		.blogDetailsOuterWrapper > div {
 			flex-direction: column-reverse;
@@ -48,8 +59,10 @@ export const StyledBlogDetailsPage = styled.section`
 			align-items: stretch;
 		}
 
+		.bannerImageWrapper,
 		.blogDetailsInnerWrapper {
-			max-width: max-content;
+			max-width: 100%;
+			max-height: unset;
 		}
 	}
 

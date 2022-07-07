@@ -79,6 +79,7 @@ export const StyledMarkdownContent = styled.article`
 		font-size: 1.5rem;
 		font-weight: 550;
 		margin-top: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.left {

@@ -49,14 +49,17 @@ export default function Blog({ blogPageData }) {
 							<p className='blogDescription'>{description}</p>
 						</div>
 
-						<Image
-							src={url}
-							alt={alternativeText}
-							width={580}
-							height={300}
-							placeholder='blur'
-							blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
-						/>
+						<div className='bannerImageWrapper'>
+							<Image
+								src={url}
+								alt={alternativeText}
+								width={width}
+								height={height}
+								quality={100}
+								placeholder='blur'
+								blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
+							/>
+						</div>
 					</Container>
 				</div>
 

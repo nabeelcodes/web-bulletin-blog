@@ -52,8 +52,10 @@ export const StyledLi = styled.li`
 					color: ${({ theme }) => theme.colors.active};
 			  `
 			: css`
-					&:hover {
-						background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
+					@media ${({ theme }) => theme.breakpoints.hover} {
+						&:hover {
+							background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
+						}
 					}
 			  `};
 `;

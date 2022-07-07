@@ -52,8 +52,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    @media screen and (hover: none) and (pointer: coarse) {
-      -webkit-tap-higDark-color: transparent; 
+    @media ${({ theme }) => theme.breakpoints.noHover} {
+      -webkit-tap-highlight-color: transparent;
     }
   }
     
