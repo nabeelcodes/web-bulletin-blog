@@ -32,12 +32,10 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang='en'>
 				<Head>
-					{/* Preload custom hosted fonts from /public folder to reduce FCP time */}
+					<link rel='icon' href='/favicon.ico' />
+					{/* Preload self hosted fonts from /public folder to reduce FCP time */}
 					<link rel='preload' href='/fonts/TTHovesVariable.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
 					<link rel='preload' href='/fonts/JetBrainsMono.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
-					<link rel='icon' href='/favicon.ico' />
-					<meta name='description' content='A simple and fast web blog built with NextJS and Strapi CMS. ' />
-					{/* <meta property="og:image" content="https://i.imgur.com/Jtl3tJG.png" /> */}
 				</Head>
 
 				<body>

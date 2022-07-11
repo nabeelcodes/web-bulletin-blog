@@ -5,12 +5,11 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Web Bulletin</title>
-				<meta property='og:title' content='Web Bulletin' />
+				<title>Home - Web Bulletin</title>
 			</Head>
 
 			<Container width='70%'>
-				<h1 style={{ fontSize: '5rem' }}>Web Bulletin Blog Using Next and Strapi</h1>
+				<h1 style={{ fontSize: 'clamp(3.75rem, 3.39rem + 1.79vw, 5rem)' }}>Web Bulletin Blog Using Next and Strapi</h1>
 			</Container>
 		</>
 	);

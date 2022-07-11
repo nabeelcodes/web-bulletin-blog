@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
 import { Container } from '../../styles/utilities';
 import { StyledBlogDetailsPage } from '../../styles/BlogId.styled';
@@ -28,14 +29,27 @@ export default function Blog({ blogPageData }) {
 	const { title, description, content, published_on } = blogPageData?.attributes;
 	const { url, alternativeText, width, height } = blogPageData?.attributes?.images?.data?.attributes;
 
+	const router = useRouter();
+	const currentUrl = `https://web-bulletin.vercel.app${router.asPath}`;
+
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 
 	return (
 		<>
 			<Head>
 				<title>{title}</title>
-				<meta property='og:title' content={title} />
 				<base target='_blank' rel='noopener noreferrer' />
+				{/* SEO TAGS */}
+				<meta name='title' content={title} key='title' />
+				<meta name='description' content={description} key='description' />
+				<meta property='og:title' content={title} key='ogTitle' />
+				<meta property='og:description' content={description} key='ogDescription' />
+				<meta property='og:image' content={url} key='ogImage' />
+				<meta property='og:url' content={currentUrl} key='ogUrl' />
+				<meta property='twitter:title' content={title} key='twitterTitle' />
+				<meta property='twitter:description' content={description} key='twitterDescription' />
+				<meta property='twitter:image' content={url} key='twitterImage' />
+				<meta property='twitter:url' content={currentUrl} key='twitterUrl' />
 			</Head>
 
 			<StyledBlogDetailsPage>

@@ -10,7 +10,6 @@ export default function BlogList({ blogs }) {
 		<>
 			<Head>
 				<title>All Blogs</title>
-				<meta property='og:title' content='Web Bulletin Blogs' />
 			</Head>
 
 			<Container width='70%' as='section' blogListContainer>

@@ -3,34 +3,33 @@ import { Container } from '../styles/utilities';
 import { useRouter } from 'next/router';
 
 export default function About() {
-  const router = useRouter();
+	const router = useRouter();
 
-  return (
-    <>
-      <Head>
-        <title>About - Web Bulletin</title>
-        <meta property="og:title" content="About - Web Bulletin"></meta>
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>About - Web Bulletin</title>
+			</Head>
 
-      <Container width="70%">
-        <h1>About Page</h1>
+			<Container width='70%'>
+				<h1>About Page</h1>
 
-        <a href="https://www.google.com" target="_blank" rel="noreferrer">
-          this is a link to google
-        </a>
+				<a href='https://www.google.com' target='_blank' rel='noreferrer'>
+					this is a link to google
+				</a>
 
-        <br />
-        <br />
+				<br />
+				<br />
 
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            router.push('/404');
-          }}
-        >
-          404 - page
-        </button>
-      </Container>
-    </>
-  );
+				<button
+					onClick={(event) => {
+						event.preventDefault();
+						router.push('/404');
+					}}
+				>
+					404 - page
+				</button>
+			</Container>
+		</>
+	);
 }
