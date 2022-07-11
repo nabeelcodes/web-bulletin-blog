@@ -74,6 +74,10 @@ export const StyledBlogDetailsPage = styled.section`
 
 		.blogDetailsOuterWrapper > div {
 			width: 100%;
+		}
+
+		.bannerImageWrapper {
+			border-radius: 0px;
 
 			img {
 				border-radius: 0px;
