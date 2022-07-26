@@ -8,15 +8,15 @@ export default {
 
 	// Colors for the app
 	colors: {
-		primaryAccent: '#FEA93C',
-		secondaryAccent: '#8B00FF',
-		secondaryAccentLight: '#8b00ff1a',
-		backgroundLight: '#FFFFFF',
-		backgroundDark: '#2E2E2E',
+		primaryAccent: '#fea93c',
+		secondaryAccent: '#8b00ff',
+		secondaryAccentLight: '#8b00ff20',
+		backgroundLight: '#ffffff',
+		backgroundDark: '#2e2e2e',
 		backgroundDarker: '#242526',
 		inactive: '#727272',
 		active: '#000000',
-		light: '#FFFFFF',
+		light: '#ffffff',
 		dark: '#000000'
 	},
 

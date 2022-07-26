@@ -12,7 +12,7 @@ export default function BlogList({ blogs }) {
 				<title>All Blogs</title>
 			</Head>
 
-			<Container width='70%' as='section' blogListContainer>
+			<Container width='75%' style={{ marginTop: '1.8rem', marginBottom: '1.8rem' }} as='section' blogListContainer>
 				{blogs.length > 0 &&
 					blogs.map((blog) => {
 						const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
