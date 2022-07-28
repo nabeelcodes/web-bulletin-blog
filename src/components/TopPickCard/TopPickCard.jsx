@@ -22,8 +22,8 @@ export default function TopPickCard({ blogDetails }) {
 							<Image
 								src={url}
 								alt={alternativeText}
-								width={1200}
-								height={700}
+								width={1300}
+								height={750}
 								quality={100}
 								placeholder='blur'
 								blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='

@@ -16,7 +16,7 @@ export const StyledTopPickCard = styled.article`
 	}
 
 	.outerContainer {
-		gap: 1rem;
+		gap: 1.6rem;
 
 		img {
 			border-radius: 10px;
@@ -40,6 +40,7 @@ export const StyledTopPickCard = styled.article`
 
 		p {
 			opacity: 0.6;
+			font-weight: 500;
 			margin-top: 0.8rem;
 		}
 	}

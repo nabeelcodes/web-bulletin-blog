@@ -14,17 +14,27 @@ export const Container = styled.div`
 			align-items: center;
 		`}
 
+	${({ homePageMainContainer }) =>
+		homePageMainContainer &&
+		css`
+			margin-top: 1.8rem;
+			margin-bottom: 1.8rem;
+
+			& > h2 {
+				opacity: 0.8;
+				font-size: 1.4rem;
+			}
+		`};
+
 	${({ blogListContainer }) =>
 		blogListContainer &&
 		css`
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.8rem;
+			margin-top: 1rem;
 
 			article {
-				margin: unset;
-				border: unset;
-				background-color: #8b00ff20;
 				height: 100%;
 			}
 

@@ -13,20 +13,12 @@ export default function Home({ blogs }) {
 				<title>Home - Web Bulletin</title>
 			</Head>
 
-			<Container width='75%' style={{ marginTop: '1.8rem', marginBottom: '1.8rem' }}>
-				<TopPickCard blogDetails={blogs[4]} />
+			<Container width='79%' homePageMainContainer>
+				<TopPickCard blogDetails={blogs[0]} />
+
+				<h2>Other Articles</h2>
 
 				<Container as='section' blogListContainer>
-					{blogs.length > 0 &&
-						blogs.slice(1).map((blog) => {
-							return (
-								<Link key={blog?.id} href={`/blogs/${blog?.id}`}>
-									<a>
-										<BlogCard blogDetails={blog} />
-									</a>
-								</Link>
-							);
-						})}
 					{blogs.length > 0 &&
 						blogs.slice(1).map((blog) => {
 							return (
