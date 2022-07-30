@@ -29,11 +29,11 @@ export default function BlogCard({ blogDetails }) {
 							<path
 								d='M11.4676 21.1151C16.9905 21.1151 21.4676 16.638 21.4676 11.1151C21.4676 5.59226 16.9905 1.11511 11.4676 1.11511C5.94477 1.11511 1.46762 5.59226 1.46762 11.1151C1.46762 16.638 5.94477 21.1151 11.4676 21.1151Z'
 								stroke='black'
-								stroke-width='2'
-								stroke-linecap='round'
-								stroke-linejoin='round'
+								strokeWidth='2'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 							/>
-							<path d='M11.4676 5.11511V11.1151L15.4676 13.1151' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+							<path d='M11.4676 5.11511V11.1151L15.4676 13.1151' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
 						</svg>
 						<span>{readingStats.text}</span>
 					</div>
