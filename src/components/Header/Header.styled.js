@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
 
 	.navBrand {
 		height: 100%;
-		width: 125px;
+		width: 147px;
 		position: relative;
 	}
 

@@ -12,10 +12,10 @@ export default function BlogList({ blogs }) {
 				<title>All Blogs</title>
 			</Head>
 
-			<Container width='79%' style={{ marginTop: '1.8rem', marginBottom: '1.8rem' }} as='section' blogListContainer>
+			<Container width='79%' as='section' allBlogsListContainer>
 				{blogs.length > 0 &&
 					blogs.map((blog) => {
-						const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
+						const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
 						const shallowUrl = blog?.attributes?.title.replaceAll(regexPatternToReplace, '-').toLowerCase();
 
 						return (

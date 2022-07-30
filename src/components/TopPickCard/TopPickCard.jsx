@@ -7,7 +7,7 @@ export default function TopPickCard({ blogDetails }) {
 	const { title, description, published_on } = blogDetails?.attributes;
 	const { url, alternativeText } = blogDetails?.attributes?.images?.data?.attributes;
 
-	const regexPatternToReplace = / |(,+ )|\.|,|\?/gm;
+	const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
 	const shallowUrl = title.replaceAll(regexPatternToReplace, '-').toLowerCase();
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 

@@ -20,15 +20,40 @@ export default function Home({ blogs }) {
 
 				<Container as='section' blogListContainer>
 					{blogs.length > 0 &&
-						blogs.slice(1).map((blog) => {
+						blogs.slice(1, 6).map((blog) => {
+							const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
+							const shallowUrl = blog?.attributes?.title.replaceAll(regexPatternToReplace, '-').toLowerCase();
+
 							return (
-								<Link key={blog?.id} href={`/blogs/${blog?.id}`}>
-									<a>
-										<BlogCard blogDetails={blog} />
-									</a>
-								</Link>
+								<>
+									<Link key={blog?.id} href={`/blogs/${blog?.id}-${shallowUrl}`}>
+										<a>
+											<BlogCard blogDetails={blog} />
+										</a>
+									</Link>
+								</>
 							);
 						})}
+
+					<Link href={`/blogs`}>
+						<a style={{ cursor: 'unset' }}>
+							<div className='linkToAllBlogsPage'>
+								<button>
+									<svg width='25' height='25' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M1.46762 8.11511H15.4676' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+										<path
+											d='M8.46762 1.11511L15.4676 8.11511L8.46762 15.1151'
+											stroke='black'
+											strokeWidth='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+										/>
+									</svg>
+								</button>
+								<span>see more articles</span>
+							</div>
+						</a>
+					</Link>
 				</Container>
 			</Container>
 		</>

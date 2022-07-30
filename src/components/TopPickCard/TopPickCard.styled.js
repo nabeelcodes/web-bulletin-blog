@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledTopPickCard = styled.article`
 	fieldset {
-		margin-bottom: 1.8rem;
+		margin-bottom: 2.8rem;
 		padding: 1.2rem;
 		border-radius: 10px;
 		border: 3px solid #cfcfcf;
