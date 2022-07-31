@@ -22,6 +22,7 @@ export default {
 
 	// Breakpoints for responsive design
 	breakpoints: {
+		xss: 'only screen and (max-width: 400px)',
 		xs: 'only screen and (max-width: 451px)',
 		sm: 'only screen and (max-width: 641px)',
 		md: 'only screen and (max-width: 769px)',

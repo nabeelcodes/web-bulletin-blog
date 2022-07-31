@@ -33,15 +33,47 @@ export const StyledBlogCard = styled.article`
 				z-index: -1;
 				left: -7px;
 				top: -7px;
-				width: calc(100% + 10px);
-				height: calc(100% + 10px);
 				width: 104.4%;
 				height: 104%;
 				background: radial-gradient(circle at 50% 50%, #8b00ff, #ff64bd, #ffd4d4);
-				/* background: radial-gradient(circle at 50% 50%, #8b00ff, yellow); */
 				background-size: 200% 200%;
 				background-position: 0% 100%;
 				border-radius: 10px;
+
+				@media ${({ theme }) => theme.breakpoints.xl} {
+					left: -8.5px;
+					top: -8px;
+					width: 103.4%;
+					height: 106%;
+				}
+
+				@media ${({ theme }) => theme.breakpoints.lg} {
+					left: -6.8px;
+					height: 105%;
+				}
+
+				@media ${({ theme }) => theme.breakpoints.ipad} {
+					left: -7.8px;
+					height: 106.5%;
+					width: 102.4%;
+				}
+
+				@media ${({ theme }) => theme.breakpoints.sm} {
+					left: -8px;
+					top: -6.5px;
+					height: 105.6%;
+					width: 102.7%;
+				}
+
+				@media ${({ theme }) => theme.breakpoints.xs} {
+					left: -5px;
+					top: -5.5px;
+					height: 103.6%;
+				}
+
+				@media ${({ theme }) => theme.breakpoints.xss} {
+					left: -4.5px;
+				}
 			}
 
 			@keyframes borderAnimation {

@@ -19,15 +19,17 @@ export default function TopPickCard({ blogDetails }) {
 				<Link key={blogDetails?.id} href={`/blogs/${blogDetails?.id}-${shallowUrl}`}>
 					<a>
 						<Container className='outerContainer' flex>
-							<Image
-								src={url}
-								alt={alternativeText}
-								width={1300}
-								height={750}
-								quality={100}
-								placeholder='blur'
-								blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
-							/>
+							<div className='imageContainer'>
+								<Image
+									src={url}
+									alt={alternativeText}
+									width={1300}
+									height={750}
+									quality={100}
+									placeholder='blur'
+									blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
+								/>
+							</div>
 
 							<Container className='innerContainer'>
 								<time className='publishingDate'>{blogPublishingDate}</time>

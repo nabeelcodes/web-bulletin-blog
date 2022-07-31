@@ -7,15 +7,11 @@ export const StyledBlogDetailsPage = styled.section`
 		background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
 		padding: 4rem 0;
 		margin-bottom: 4rem;
-
-		& > div {
-			gap: 2rem;
-		}
 	}
 
 	.bannerImageWrapper {
 		max-width: 60%;
-		max-height: 325px;
+		max-height: 500px;
 		overflow: hidden;
 		border-radius: 5px;
 

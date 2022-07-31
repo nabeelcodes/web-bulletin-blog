@@ -25,6 +25,12 @@ export const StyledMarkdownContent = styled.article`
 		white-space: pre;
 	}
 
+	h1 code,
+	h2 code,
+	h3 code,
+	h4 code,
+	h5 code,
+	h6 code,
 	p code,
 	li code {
 		background-color: rgba(0, 0, 0, 0.05);
@@ -62,7 +68,8 @@ export const StyledMarkdownContent = styled.article`
 		line-height: 1.7rem;
 	}
 
-	& > ul,ol {
+	& > ul,
+	ol {
 		padding-left: 1.5em;
 	}
 

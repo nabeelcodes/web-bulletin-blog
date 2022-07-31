@@ -2,7 +2,8 @@ export default function NavLogo({ darkMode }) {
 	const customCss = {
 		position: 'absolute',
 		top: '19px',
-		left: '10px'
+		left: '10px',
+		cursor: 'pointer'
 	};
 
 	const darkLogo = (

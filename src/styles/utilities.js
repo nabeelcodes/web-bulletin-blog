@@ -24,15 +24,19 @@ export const Container = styled.div`
 				opacity: 0.8;
 				font-size: 1.4rem;
 			}
+
+			@media ${({ theme }) => theme.breakpoints.sm} {
+				width: 90%;
+			}
 		`};
 
 	${({ blogListContainer }) =>
 		blogListContainer &&
 		css`
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 2.8rem;
-			margin-top: 1rem;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: clamp(1.1rem, 3vw, 2.8rem);
+			margin: 1rem 0 0 0;
 
 			article {
 				height: 100%;
@@ -42,52 +46,60 @@ export const Container = styled.div`
 				height: 100%;
 				display: grid;
 				place-items: center;
-				position: relative;
 
 				button {
 					cursor: pointer;
 					display: flex;
 					justify-content: center;
-					place-items: center;
-					height: 3.5rem;
-					width: 3.5rem;
+					align-items: center;
+					gap: 12px;
 					border: 4.5px solid black;
-					border-radius: 50%;
-					transition: width 0.3s linear, border-radius 0.3s linear;
-					background-color: transparent;
-
-					&:hover {
-						border-radius: 50px;
-						width: 11.8rem;
-					}
-				}
-
-				span {
-					position: absolute;
-					top: 150px;
-					left: 97px;
-					z-index: -10;
-					opacity: 0;
+					border-radius: 25px;
+					padding: 0.5rem 1rem;
 					font-size: 1.1rem;
 					font-weight: 500;
-					transition: top 0.5s linear;
-				}
+					white-space: nowrap;
+					background-color: transparent;
+					transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
-				button:hover {
-					svg {
-						display: none;
+					.chevronRight {
+						display: grid;
+						place-items: center;
+
+						svg {
+							min-width: 15px;
+							min-height: 15px;
+
+							path {
+								transition: stroke 0.3s ease-in-out;
+							}
+						}
 					}
 
-					+ span {
-						opacity: 1;
-						top: 101.5px;
-						transition: opacity 1s linear;
+					@keyframes arrowMovement {
+						from {
+							transform: translateX(4px);
+						}
+						to {
+							transform: translateX(-4px);
+						}
+					}
+
+					@media ${({ theme }) => theme.breakpoints.hover} {
+						&:hover {
+							background-color: black;
+							color: white;
+
+							svg {
+								animation: arrowMovement 0.7s linear infinite alternate;
+
+								path {
+									stroke: white;
+								}
+							}
+						}
 					}
 				}
-			}
-
-			@media ${({ theme }) => theme.breakpoints.sm} {
-				width: 90%;
 			}
 		`}
 
@@ -95,8 +107,8 @@ export const Container = styled.div`
 		allBlogsListContainer &&
 		css`
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 4rem;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: clamp(2.3rem, 3.5vw, 3rem);
 			margin-top: 1.8rem;
 			margin-bottom: 1.8rem;
 

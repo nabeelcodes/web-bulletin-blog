@@ -1,21 +1,24 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { StyledHeader, StyledLi } from './Header.styled';
 import { Container } from '../../styles/utilities';
 import NavLogo from '../NavLogo/NavLogo';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 export default function Header() {
 	const router = useRouter();
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		router.push('/');
+	};
 
 	return (
 		<StyledHeader>
 			<Container flex width='80%' as='nav'>
 				<div className='navBrand'>
-					<Link href='/'>
-						<a aria-label='Click on this logo to goto Homepage'>
-							<NavLogo />
-						</a>
-					</Link>
+					<span onClick={handleClick}>
+						<NavLogo />
+					</span>
 				</div>
 
 				<div className='navMenu'>

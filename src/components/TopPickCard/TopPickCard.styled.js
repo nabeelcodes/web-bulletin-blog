@@ -21,6 +21,10 @@ export const StyledTopPickCard = styled.article`
 		img {
 			border-radius: 10px;
 		}
+
+		@media ${({ theme }) => theme.breakpoints.ipad} {
+			flex-direction: column;
+		}
 	}
 
 	.innerContainer {
@@ -34,7 +38,7 @@ export const StyledTopPickCard = styled.article`
 		}
 
 		h2 {
-			font-size: 2.3rem;
+			font-size: clamp(1.25rem, 2.8vw, 2.3rem);
 			margin-top: 0.8rem;
 		}
 

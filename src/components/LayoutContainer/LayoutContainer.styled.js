@@ -5,7 +5,7 @@ export const StyledLayoutContainer = styled.div`
 	flex-direction: column;
 
 	margin-inline: auto;
-	max-width: ${({ maxWidth }) => maxWidth ?? '1400px'};
+	max-width: ${({ maxWidth }) => maxWidth ?? '2000px'};
 	min-height: 100vh;
 	overflow: hidden;
 

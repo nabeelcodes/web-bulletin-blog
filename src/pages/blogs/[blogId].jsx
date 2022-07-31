@@ -54,7 +54,7 @@ export default function Blog({ blogPageData }) {
 
 			<StyledBlogDetailsPage>
 				<div className='blogDetailsOuterWrapper'>
-					<Container width='80%' flex>
+					<Container width='80%' style={{ gap: '2rem' }} flex>
 						<div className='blogDetailsInnerWrapper'>
 							<time className='publishingDate'>{blogPublishingDate}</time>
 
