@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     font-display: optional;
     font-style: normal;
   }
+  
   @font-face {
     font-family: 'tthovesvar';
     src: url('/fonts/TTHovesVariable.woff2') format('woff2 supports variations'),

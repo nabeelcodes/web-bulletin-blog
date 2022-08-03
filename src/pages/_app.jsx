@@ -24,7 +24,11 @@ export default function MyApp({ Component, pageProps }) {
 					content='A simple and fast web blog built with NextJS on the frontend and Headless CMS(Strapi) for the backend.'
 					key='ogDescription'
 				/>
-				{/* <meta property='og:image' content='' key='ogImage' /> */}
+				<meta
+					property='og:image'
+					content='https://res.cloudinary.com/do884lked/image/upload/v1659552169/Homepage_OG_image_o4o0fz.png'
+					key='ogImage'
+				/>
 				<meta property='og:url' content='https://web-bulletin.vercel.app/' key='ogUrl' />
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta name='twitter:creator' content='@NABEEL_ASIF' />
@@ -34,7 +38,11 @@ export default function MyApp({ Component, pageProps }) {
 					content='A simple and fast web blog built with NextJS on the frontend and Headless CMS(Strapi) for the backend.'
 					key='twitterDescription'
 				/>
-				{/* <meta property='twitter:image' content='' key='twitterImage' /> */}
+				<meta
+					property='twitter:image'
+					content='https://res.cloudinary.com/do884lked/image/upload/v1659552169/Homepage_OG_image_o4o0fz.png'
+					key='twitterImage'
+				/>
 				<meta property='twitter:url' content='https://web-bulletin.vercel.app/' key='twitterUrl' />
 			</Head>
 
