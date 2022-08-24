@@ -7,6 +7,10 @@ export const StyledTopPickCard = styled.article`
 		padding: 1.3rem 1.5rem;
 		border-radius: 10px;
 		border: 3px solid ${({ theme }) => theme.colors.secondaryAccentLight};
+
+		@media ${({ theme }) => theme.breakpoints.sm} {
+			padding: 1rem 0.7rem 1.3rem;
+		}
 	}
 
 	legend {
