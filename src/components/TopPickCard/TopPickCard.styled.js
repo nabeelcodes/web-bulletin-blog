@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const StyledTopPickCard = styled.article`
 	fieldset {
+		cursor: pointer;
 		margin-bottom: 2.8rem;
-		padding: 1.2rem;
+		padding: 1.3rem 1.5rem;
 		border-radius: 10px;
-		border: 3px solid #cfcfcf;
+		border: 3px solid ${({ theme }) => theme.colors.secondaryAccentLight};
 	}
 
 	legend {

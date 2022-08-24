@@ -67,9 +67,10 @@ export default function Blog({ blogPageData }) {
 							<Image
 								src={url}
 								alt={alternativeText}
-								width={width}
-								height={height}
+								width={700}
+								height={400}
 								quality={100}
+								objectFit='cover'
 								placeholder='blur'
 								blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='
 							/>
