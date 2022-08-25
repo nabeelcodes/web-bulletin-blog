@@ -102,22 +102,23 @@ export const Container = styled.div`
 				}
 			}
 		`}
+`;
 
-	${({ allBlogsListContainer }) =>
-		allBlogsListContainer &&
-		css`
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: clamp(2.3rem, 3.5vw, 3rem);
-			margin-top: 1.8rem;
-			margin-bottom: 1.8rem;
+export const AllBlogsListContainer = styled.section`
+	height: 100%;
+	width: 79%;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: clamp(2.3rem, 3.5vw, 3rem);
+	margin-top: 1.8rem;
+	margin-bottom: 1.8rem;
 
-			article {
-				height: 100%;
-			}
+	article {
+		height: 100%;
+	}
 
-			@media ${({ theme }) => theme.breakpoints.sm} {
-				width: 90%;
-			}
-		`}
+	@media ${({ theme }) => theme.breakpoints.sm} {
+		width: 90%;
+	}
 `;

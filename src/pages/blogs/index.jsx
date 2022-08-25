@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { AllBlogsListContainer } from '../../styles/utilities';
 import BlogCard from '../../components/BlogCard/BlogCard';
-import { Container } from '../../styles/utilities';
 
 const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
 
@@ -12,7 +12,7 @@ export default function BlogList({ blogs }) {
 				<title>All Blogs</title>
 			</Head>
 
-			<Container width='79%' as='section' allBlogsListContainer>
+			<AllBlogsListContainer>
 				{blogs.length > 0 &&
 					blogs.map((blog) => {
 						const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
@@ -26,7 +26,7 @@ export default function BlogList({ blogs }) {
 							</Link>
 						);
 					})}
-			</Container>
+			</AllBlogsListContainer>
 		</>
 	);
 }
