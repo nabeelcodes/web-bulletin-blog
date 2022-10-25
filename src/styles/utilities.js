@@ -102,6 +102,34 @@ export const Container = styled.div`
 				}
 			}
 		`}
+
+	${({ aboutPageContainer }) =>
+		aboutPageContainer &&
+		css`
+			text-align: center;
+
+			h1 {
+				font-size: calc(1.525rem + 3.3vw);
+				font-weight: 700;
+			}
+
+			p {
+				font-size: 1.15rem;
+				margin-bottom: 1em;
+			}
+
+			a {
+				display: inline-block;
+				background-color: #8b00ff40;
+				padding: 0.1em 0.3em;
+				margin-right: 0.1em;
+				border-radius: 5px;
+			}
+
+			@media ${({ theme }) => theme.breakpoints.sm} {
+				width: 90%;
+			}
+		`};
 `;
 
 export const AllBlogsListContainer = styled.section`
