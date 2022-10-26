@@ -106,6 +106,33 @@ export const Container = styled.div`
 	${({ aboutPageContainer }) =>
 		aboutPageContainer &&
 		css`
+			[data-tooltip]:before {
+				/* needed - do not touch */
+				content: attr(data-tooltip);
+				position: absolute;
+				opacity: 0;
+
+				/* customizable */
+				color: #ededed;
+				font-size: 1rem;
+				font-weight: 700;
+				border-radius: 5px;
+				padding: 0.2rem 0.5rem;
+				box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+				transition: all 0.15s ease;
+				-webkit-transition: all 0.15s ease;
+			}
+
+			[data-tooltip]:hover:before {
+				/* needed - do not touch */
+				opacity: 1;
+
+				/* customizable */
+				background: black;
+				margin-top: -40px;
+				margin-left: 50px;
+			}
+
 			text-align: center;
 
 			h1 {
