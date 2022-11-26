@@ -123,14 +123,16 @@ export const Container = styled.div`
 				-webkit-transition: all 0.15s ease;
 			}
 
-			[data-tooltip]:hover:before {
-				/* needed - do not touch */
-				opacity: 1;
+			@media ${({ theme }) => theme.breakpoints.hover} {
+				[data-tooltip]:hover:before {
+					/* needed - do not touch */
+					opacity: 1;
 
-				/* customizable */
-				background: black;
-				margin-top: -40px;
-				margin-left: 50px;
+					/* customizable */
+					background: black;
+					margin-top: -40px;
+					margin-left: 50px;
+				}
 			}
 
 			text-align: center;

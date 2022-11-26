@@ -29,7 +29,12 @@ export default function About() {
 				</p>
 				<p>
 					Strapi provides us with an easy to use
-					<a href='https://api-blog-strapi-next.herokuapp.com/admin/' data-tooltip='Strapi Dashboard for this Blog' target='_blank' rel='noreferrer'>
+					<a
+						href='https://web-bulletin-backend.up.railway.app/admin/auth/login'
+						data-tooltip='Strapi Dashboard for this Blog'
+						target='_blank'
+						rel='noreferrer'
+					>
 						Dashboard
 					</a>
 					, which facilitates posting Blog title, body, images and other information. This is converted into an easy to manage JSON by a REST/GraphQL
