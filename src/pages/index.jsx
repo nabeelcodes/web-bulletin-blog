@@ -4,7 +4,7 @@ import TopPickCard from '../components/TopPickCard/TopPickCard';
 import BlogCard from '../components/BlogCard/BlogCard';
 import { Container } from '../styles/utilities';
 
-const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
+const BASE_URL = `https://web-bulletin-backend.up.railway.app/api`;
 
 export default function Home({ blogs }) {
 	return (

@@ -142,14 +142,15 @@ export const Container = styled.div`
 
 			p {
 				font-size: 1.15rem;
+				line-height: 1.5em;
 				margin-bottom: 1em;
 			}
 
 			a {
 				display: inline-block;
 				background-color: #8b00ff40;
-				padding: 0.1em 0.3em;
-				margin-right: 0.1em;
+				padding: 0 0.3em;
+				margin-inline: 0.1em;
 				border-radius: 5px;
 			}
 

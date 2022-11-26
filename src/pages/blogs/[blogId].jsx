@@ -5,7 +5,7 @@ import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
 import { Container } from '../../styles/utilities';
 import { StyledBlogDetailsPage } from '../../styles/BlogId.styled';
 
-const BASE_URL = `https://api-blog-strapi-next.herokuapp.com/api`;
+const BASE_URL = `https://web-bulletin-backend.up.railway.app/api`;
 
 Blog.getInitialProps = async (ctx) => {
 	/* extracting numeric value of blogId from ctx */
