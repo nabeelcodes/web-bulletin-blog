@@ -34,6 +34,6 @@ yarn-error.log*
 # others
 .vscode
 .key
-strapiApiData.json
+supabaseApiData.json
 TEST.md
 TODOs.md
