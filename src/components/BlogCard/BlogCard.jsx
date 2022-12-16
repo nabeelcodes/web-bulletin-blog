@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import { StyledBlogCard } from './BlogCard.styled';
 
 export default function BlogCard({ blogDetails }) {
-	const { title, description, published_on, content } = blogDetails?.attributes;
+	const { title, description, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
+
+	const content =
+		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus dolores, dolor beatae nam ipsam debitis, perferendis quidem eius, in natus? Deserunt illum quaerat dignissimos, itaque repellat rerum optio doloribus officiis iste dolore eaque tenetur quisquam soluta vitae, id corporis. Natus sed culpa labore quasi illum quam ipsam debitis odit.';
 	const readingStats = readingTime(content);
 	const router = useRouter();
 

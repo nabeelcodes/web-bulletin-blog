@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					property='og:image'
-					content='https://res.cloudinary.com/do884lked/image/upload/v1666001235/og_image_for_Homepage_galkbh.png'
+					content='https://res.cloudinary.com/do884lked/image/upload/v1671211640/OG_image_for_Homepage_pyjk69.png'
 					key='ogImage'
 				/>
 				<meta property='og:url' content='https://web-bulletin.vercel.app/' key='ogUrl' />
@@ -40,7 +40,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					property='twitter:image'
-					content='https://res.cloudinary.com/do884lked/image/upload/v1666001235/og_image_for_Homepage_galkbh.png'
+					content='https://res.cloudinary.com/do884lked/image/upload/v1671211640/OG_image_for_Homepage_pyjk69.png'
 					key='twitterImage'
 				/>
 				<meta property='twitter:url' content='https://web-bulletin.vercel.app/' key='twitterUrl' />
