@@ -85,7 +85,7 @@ export const getStaticProps = async () => {
 	let { data, error } = await supabase.from('blogs').select('*').order('id', { ascending: false });
 
 	if (error) {
-		console.log(error.message);
+		console.table({ ERROR: `${error.message}` });
 		return {
 			notFound: true
 		};

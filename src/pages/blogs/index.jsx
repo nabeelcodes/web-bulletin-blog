@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { AllBlogsListContainer } from '../../styles/utilities';
 import BlogCard from '../../components/BlogCard/BlogCard';
+import { AllBlogsListContainer } from '../../styles/utilities';
 import { supabase } from '../../utils/supabaseClient';
 
 export default function BlogList({ blogs }) {

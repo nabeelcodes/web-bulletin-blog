@@ -4,7 +4,8 @@ module.exports = {
 		styledComponents: true
 	},
 	images: {
-		domains: ['res.cloudinary.com']
+		// domains: ['res.cloudinary.com']
+		domains: ['ovxuyrukzdqmaklnapwf.supabase.co']
 	},
 	async headers() {
 		return [

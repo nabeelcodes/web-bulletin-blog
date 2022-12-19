@@ -21,7 +21,11 @@ export default function Header() {
 
 	return (
 		<StyledHeader>
-			<Container flex width='80%' as='nav'>
+			<Container
+				flex
+				width='80%'
+				as='nav'
+			>
 				<div className='navBrand'>
 					<span onClick={handleClickForNavBrand}>
 						<NavLogo />

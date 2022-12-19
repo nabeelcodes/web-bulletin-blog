@@ -16,9 +16,15 @@ export default function TopPickCard({ blogDetails }) {
 			<fieldset>
 				<legend>Top Pick Of The Week</legend>
 
-				<Link key={id} href={`/blogs/${id}-${shallowUrl}`}>
+				<Link
+					key={id}
+					href={`/blogs/${id}-${shallowUrl}`}
+				>
 					<a>
-						<Container className='outerContainer' flex>
+						<Container
+							className='outerContainer'
+							flex
+						>
 							<div className='imageContainer'>
 								<Image
 									src={url}

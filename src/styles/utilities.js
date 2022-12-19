@@ -111,6 +111,7 @@ export const Container = styled.div`
 				content: attr(data-tooltip);
 				position: absolute;
 				opacity: 0;
+				z-index: -1;
 
 				/* customizable */
 				color: #ededed;
