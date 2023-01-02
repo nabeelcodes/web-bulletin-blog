@@ -1,7 +1,7 @@
 import { StyledFooter } from './Footer.styled';
-import { Container } from '../../styles/utilities';
-import GithubLogo from '../GithubLogo/GithubLogo';
-import LinkedinLogo from '../LinkedinLogo/LinkedinLogo';
+import { Container } from 'styles/utilities';
+import GithubLogo from 'components/GithubLogo/GithubLogo';
+import LinkedinLogo from 'components/LinkedinLogo/LinkedinLogo';
 
 export default function Footer() {
 	return (

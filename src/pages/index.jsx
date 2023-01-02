@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import TopPickCard from '../components/TopPickCard/TopPickCard';
-import BlogCard from '../components/BlogCard/BlogCard';
-import { Container } from '../styles/utilities';
-import { supabase } from '../utils/supabaseClient';
+import TopPickCard from 'components/TopPickCard/TopPickCard';
+import BlogCard from 'components/BlogCard/BlogCard';
+import { Container } from 'styles/utilities';
+import { supabase } from 'utils/supabaseClient';
 
 export default function Home({ blogs }) {
 	return (
@@ -27,7 +27,9 @@ export default function Home({ blogs }) {
 					{blogs.length > 0 &&
 						blogs.slice(1, 6).map((blog) => {
 							const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
-							const shallowUrl = blog?.attributes?.title.replaceAll(regexPatternToReplace, '-').toLowerCase();
+							const shallowUrl = blog?.attributes?.title
+								.replaceAll(regexPatternToReplace, '-')
+								.toLowerCase();
 
 							return (
 								<Link
@@ -82,7 +84,10 @@ export default function Home({ blogs }) {
 
 export const getStaticProps = async () => {
 	/* fetching list of SORTED(by id) blog posts from Supabase postgres DB */
-	let { data, error } = await supabase.from('blogs').select('*').order('id', { ascending: false });
+	let { data, error } = await supabase
+		.from('blogs')
+		.select('*')
+		.order('id', { ascending: false });
 
 	if (error) {
 		console.table({ ERROR: `${error.message}` });

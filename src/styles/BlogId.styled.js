@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledBlogDetailsPage = styled.section`
 	width: 100%;
 
+	h2 {
+		scroll-margin-top: 2rem;
+	}
+
 	.blogDetailsOuterWrapper {
 		background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
 		padding: 4rem 0;

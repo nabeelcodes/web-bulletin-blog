@@ -1,18 +1,24 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Container } from '../../styles/utilities';
-import { StyledBlogDetailsPage } from '../../styles/BlogId.styled';
-import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
+import { Container } from 'styles/utilities';
+import { StyledBlogDetailsPage } from 'styles/BlogId.styled';
+import { supabase } from 'utils/supabaseClient';
+import MarkdownContent from 'components/MarkdownContent/MarkdownContent';
 
-import { supabase } from '../../utils/supabaseClient';
+import Parser from 'markdown-parser';
+import { useEffect, useState } from 'react';
 
 Blog.getInitialProps = async (ctx) => {
 	/* extracting numeric value of blogId from ctx */
 	const blogId = ctx.query.blogId.split('-')[0];
 
 	/* Fetching data from supabase postgres DB */
-	let { data, error } = await supabase.from('blogs').select('*').eq('id', `${blogId}`);
+	let { data, error } = await supabase
+		.from('blogs')
+		.select('*')
+		.eq('id', `${blogId}`);
 
 	if (error) {
 		console.table({ ERROR: `${error.message}` });
@@ -26,15 +32,29 @@ Blog.getInitialProps = async (ctx) => {
 	};
 };
 
+/* Hook to extract headings from markdown */
+const useParser = (content) => {
+	const [parsedHeadings, setParsedHeadings] = useState([]);
+	useEffect(() => {
+		const markdownParser = new Parser();
+		markdownParser.parse(content, (error, result) => {
+			if (error) return;
+			setParsedHeadings(result.headings);
+		});
+	}, [content]);
+
+	return { parsedHeadings };
+};
+
 export default function Blog({ blogPageData }) {
-	console.log(blogPageData);
 	const { title, description, content, published_on } = blogPageData;
 	const { url, alternativeText } = blogPageData?.images?.banner_image;
 
 	const router = useRouter();
 	const currentUrl = `https://web-bulletin.vercel.app${router.asPath}`;
-
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
+
+	const { parsedHeadings } = useParser(content);
 
 	return (
 		<>
@@ -98,6 +118,13 @@ export default function Blog({ blogPageData }) {
 			</Head>
 
 			<StyledBlogDetailsPage>
+				{parsedHeadings?.length > 0 &&
+					parsedHeadings.map((item, index) => (
+						<div key={index}>
+							<Link href={`#${item.replaceAll(' ', '-')}`}>{item}</Link>
+						</div>
+					))}
+
 				<div className='blogDetailsOuterWrapper'>
 					<Container
 						width='80%'

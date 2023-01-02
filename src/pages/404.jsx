@@ -1,4 +1,4 @@
-import { Container } from '../styles/utilities';
+import { Container } from 'styles/utilities';
 
 const cssStyles = {
 	display: 'grid',
@@ -8,7 +8,10 @@ const cssStyles = {
 
 export default function custom404() {
 	return (
-		<Container style={cssStyles} width='70%'>
+		<Container
+			style={cssStyles}
+			width='70%'
+		>
 			<h1>404, not found my bruh !!</h1>
 		</Container>
 	);

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container } from '../../styles/utilities';
+import { Container } from 'styles/utilities';
 import { StyledTopPickCard } from './TopPickCard.styled';
 
 export default function TopPickCard({ blogDetails }) {

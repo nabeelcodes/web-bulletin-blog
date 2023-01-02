@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkHeadingId from 'remark-heading-id';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { StyledMarkdownContent } from './MarkdownContent.styled';
@@ -24,7 +25,7 @@ export default function MarkdownContent({ contentToParse }) {
 	return (
 		<StyledMarkdownContent>
 			<ReactMarkdown
-				remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+				remarkPlugins={[remarkGfm, remarkHeadingId, { singleTilde: false }]}
 				components={{ code: CodeHighlight }}
 			>
 				{contentToParse}
