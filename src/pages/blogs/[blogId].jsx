@@ -6,10 +6,10 @@ import { Container } from 'styles/utilities';
 import { StyledBlogDetailsPage } from 'styles/BlogId.styled';
 import { supabase } from 'utils/supabaseClient';
 import MarkdownContent from 'components/MarkdownContent/MarkdownContent';
+import ScrollToTopButton from 'components/ScrollToTopButton/ScrollToTopButton';
+import useHeadingsParser from 'hooks/useHeadingsParser';
 
-import Parser from 'markdown-parser';
-import { useEffect, useState } from 'react';
-
+// Fetching data from supabase using getInitialProps
 Blog.getInitialProps = async (ctx) => {
 	/* extracting numeric value of blogId from ctx */
 	const blogId = ctx.query.blogId.split('-')[0];
@@ -32,29 +32,15 @@ Blog.getInitialProps = async (ctx) => {
 	};
 };
 
-/* Hook to extract headings from markdown */
-const useParser = (content) => {
-	const [parsedHeadings, setParsedHeadings] = useState([]);
-	useEffect(() => {
-		const markdownParser = new Parser();
-		markdownParser.parse(content, (error, result) => {
-			if (error) return;
-			setParsedHeadings(result.headings);
-		});
-	}, [content]);
-
-	return { parsedHeadings };
-};
-
 export default function Blog({ blogPageData }) {
 	const { title, description, content, published_on } = blogPageData;
 	const { url, alternativeText } = blogPageData?.images?.banner_image;
 
+	const { parsedHeadings } = useHeadingsParser(content);
+
 	const router = useRouter();
 	const currentUrl = `https://web-bulletin.vercel.app${router.asPath}`;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
-
-	const { parsedHeadings } = useParser(content);
 
 	return (
 		<>
@@ -118,13 +104,6 @@ export default function Blog({ blogPageData }) {
 			</Head>
 
 			<StyledBlogDetailsPage>
-				{parsedHeadings?.length > 0 &&
-					parsedHeadings.map((item, index) => (
-						<div key={index}>
-							<Link href={`#${item.replaceAll(' ', '-')}`}>{item}</Link>
-						</div>
-					))}
-
 				<div className='blogDetailsOuterWrapper'>
 					<Container
 						width='80%'
@@ -154,8 +133,34 @@ export default function Blog({ blogPageData }) {
 					</Container>
 				</div>
 
-				<MarkdownContent contentToParse={content} />
+				<Container
+					width='80%'
+					flex
+					className='mainContent'
+				>
+					<MarkdownContent contentToParse={content} />
+
+					<aside className='navigationPane'>
+						<h3>In this article</h3>
+
+						<div>
+							{parsedHeadings?.length > 0 &&
+								parsedHeadings.map((item, index) => (
+									<Link
+										key={index}
+										href={`#${item
+											.slice(1, item.length - 1)
+											.replaceAll(' ', '-')}`}
+									>
+										{item}
+									</Link>
+								))}
+						</div>
+					</aside>
+				</Container>
 			</StyledBlogDetailsPage>
+
+			<ScrollToTopButton />
 		</>
 	);
 }

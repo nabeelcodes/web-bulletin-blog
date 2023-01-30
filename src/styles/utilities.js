@@ -111,7 +111,7 @@ export const Container = styled.div`
 				content: attr(data-tooltip);
 				position: absolute;
 				opacity: 0;
-				z-index: -1;
+				pointer-events: none;
 
 				/* customizable */
 				color: #ededed;
@@ -119,7 +119,8 @@ export const Container = styled.div`
 				font-weight: 700;
 				border-radius: 5px;
 				padding: 0.2rem 0.5rem;
-				box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+				box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px,
+					rgb(14 30 37 / 32%) 0px 2px 16px 0px;
 				transition: all 0.15s ease;
 				-webkit-transition: all 0.15s ease;
 			}
@@ -128,6 +129,7 @@ export const Container = styled.div`
 				[data-tooltip]:hover:before {
 					/* needed - do not touch */
 					opacity: 1;
+					z-index: 2;
 
 					/* customizable */
 					background: black;
