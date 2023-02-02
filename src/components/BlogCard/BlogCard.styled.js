@@ -31,10 +31,10 @@ export const StyledBlogCard = styled.article`
 				content: '';
 				position: absolute;
 				z-index: -1;
-				left: -7px;
+				left: -7.5px;
 				top: -7px;
-				width: 104.4%;
-				height: 104%;
+				width: 104.5%;
+				height: 104.5%;
 				background: radial-gradient(circle at 50% 50%, #8b00ff, #ff64bd, #ffd4d4);
 				background-size: 200% 200%;
 				background-position: 0% 100%;

@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 export const StyledMarkdownContent = styled.article`
-	width: 55%;
-	margin-inline: auto;
-	margin-bottom: 1em;
+	width: 60%;
+	margin-bottom: 4em;
 
 	*,
 	*::before,
 	*::after {
 		margin: revert;
 		padding: revert;
+	}
+
+	img {
+		max-width: -webkit-fill-available;
 	}
 
 	pre div {
@@ -103,14 +106,17 @@ export const StyledMarkdownContent = styled.article`
 
 	@media ${({ theme }) => theme.breakpoints.ipad} {
 		width: 75%;
+		margin-inline: auto;
 	}
 
 	@media ${({ theme }) => theme.breakpoints.md} {
 		width: 80%;
+		margin-inline: auto;
 	}
 
 	@media ${({ theme }) => theme.breakpoints.sm} {
 		width: 90%;
+		margin-inline: auto;
 
 		p,
 		li {

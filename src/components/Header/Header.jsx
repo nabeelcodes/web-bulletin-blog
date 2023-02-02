@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { StyledHeader, StyledLi } from './Header.styled';
-import { Container } from '../../styles/utilities';
-import NavLogo from '../NavLogo/NavLogo';
+import { Container } from 'styles/utilities';
+import NavLogo from 'components/NavLogo/NavLogo';
 
 export default function Header() {
 	const router = useRouter();
@@ -21,7 +21,11 @@ export default function Header() {
 
 	return (
 		<StyledHeader>
-			<Container flex width='80%' as='nav'>
+			<Container
+				flex
+				width='80%'
+				as='nav'
+			>
 				<div className='navBrand'>
 					<span onClick={handleClickForNavBrand}>
 						<NavLogo />

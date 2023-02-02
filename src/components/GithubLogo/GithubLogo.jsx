@@ -21,7 +21,11 @@ export default function GithubLogo() {
 			</g>
 			<defs>
 				<clipPath id='clip0_210_2'>
-					<rect width='24' height='24' fill='white' />
+					<rect
+						width='24'
+						height='24'
+						fill='white'
+					/>
 				</clipPath>
 			</defs>
 		</svg>

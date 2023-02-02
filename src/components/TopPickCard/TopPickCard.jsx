@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container } from '../../styles/utilities';
+import { Container } from 'styles/utilities';
 import { StyledTopPickCard } from './TopPickCard.styled';
 
 export default function TopPickCard({ blogDetails }) {
-	const { title, description, published_on } = blogDetails?.attributes;
-	const { url, alternativeText } = blogDetails?.attributes?.images?.data?.attributes;
+	const { id, title, description, published_on, images } = blogDetails;
+	const { url, alternativeText } = images?.banner_image;
 
 	const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
 	const shallowUrl = title.replaceAll(regexPatternToReplace, '-').toLowerCase();
@@ -16,9 +16,15 @@ export default function TopPickCard({ blogDetails }) {
 			<fieldset>
 				<legend>Top Pick Of The Week</legend>
 
-				<Link key={blogDetails?.id} href={`/blogs/${blogDetails?.id}-${shallowUrl}`}>
+				<Link
+					key={id}
+					href={`/blogs/${id}-${shallowUrl}`}
+				>
 					<a>
-						<Container className='outerContainer' flex>
+						<Container
+							className='outerContainer'
+							flex
+						>
 							<div className='imageContainer'>
 								<Image
 									src={url}

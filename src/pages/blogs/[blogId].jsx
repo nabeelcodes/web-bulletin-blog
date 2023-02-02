@@ -1,60 +1,115 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import MarkdownContent from '../../components/MarkdownContent/MarkdownContent';
-import { Container } from '../../styles/utilities';
-import { StyledBlogDetailsPage } from '../../styles/BlogId.styled';
+import { Container } from 'styles/utilities';
+import { StyledBlogDetailsPage } from 'styles/BlogId.styled';
+import { supabase } from 'utils/supabaseClient';
+import MarkdownContent from 'components/MarkdownContent/MarkdownContent';
+import ScrollToTopButton from 'components/ScrollToTopButton/ScrollToTopButton';
+import useHeadingsParser from 'hooks/useHeadingsParser';
 
-const BASE_URL = `https://web-bulletin-backend.up.railway.app/api`;
-
+// Fetching data from supabase using getInitialProps
 Blog.getInitialProps = async (ctx) => {
 	/* extracting numeric value of blogId from ctx */
 	const blogId = ctx.query.blogId.split('-')[0];
-	const res = await fetch(`${BASE_URL}/posts/${blogId}?populate=*`);
 
-	if (!res?.ok) {
+	/* Fetching data from supabase postgres DB */
+	let { data, error } = await supabase
+		.from('blogs')
+		.select('*')
+		.eq('id', `${blogId}`);
+
+	if (error) {
+		console.table({ ERROR: `${error.message}` });
 		return {
 			notFound: true
 		};
 	}
 
-	const dataFromApi = await res?.json();
-
 	return {
-		blogPageData: dataFromApi?.data
+		blogPageData: data[0]
 	};
 };
 
 export default function Blog({ blogPageData }) {
-	const { title, description, content, published_on } = blogPageData?.attributes;
-	const { url, alternativeText, width, height } = blogPageData?.attributes?.images?.data?.attributes;
+	const { title, description, content, published_on } = blogPageData;
+	const { url, alternativeText } = blogPageData?.images?.banner_image;
+
+	const { parsedHeadings } = useHeadingsParser(content);
 
 	const router = useRouter();
 	const currentUrl = `https://web-bulletin.vercel.app${router.asPath}`;
-
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 
 	return (
 		<>
 			<Head>
 				<title>{title}</title>
-				<base target='_blank' rel='noopener noreferrer' />
+				<base
+					target='_blank'
+					rel='noopener noreferrer'
+				/>
 				{/* SEO TAGS */}
-				<meta name='title' content={title} key='title' />
-				<meta name='description' content={description} key='description' />
-				<meta property='og:title' content={title} key='ogTitle' />
-				<meta property='og:description' content={description} key='ogDescription' />
-				<meta property='og:image' content={url} key='ogImage' />
-				<meta property='og:url' content={currentUrl} key='ogUrl' />
-				<meta property='twitter:title' content={title} key='twitterTitle' />
-				<meta property='twitter:description' content={description} key='twitterDescription' />
-				<meta property='twitter:image' content={url} key='twitterImage' />
-				<meta property='twitter:url' content={currentUrl} key='twitterUrl' />
+				<meta
+					name='title'
+					content={title}
+					key='title'
+				/>
+				<meta
+					name='description'
+					content={description}
+					key='description'
+				/>
+				<meta
+					property='og:title'
+					content={title}
+					key='ogTitle'
+				/>
+				<meta
+					property='og:description'
+					content={description}
+					key='ogDescription'
+				/>
+				<meta
+					property='og:image'
+					content={url}
+					key='ogImage'
+				/>
+				<meta
+					property='og:url'
+					content={currentUrl}
+					key='ogUrl'
+				/>
+				<meta
+					property='twitter:title'
+					content={title}
+					key='twitterTitle'
+				/>
+				<meta
+					property='twitter:description'
+					content={description}
+					key='twitterDescription'
+				/>
+				<meta
+					property='twitter:image'
+					content={url}
+					key='twitterImage'
+				/>
+				<meta
+					property='twitter:url'
+					content={currentUrl}
+					key='twitterUrl'
+				/>
 			</Head>
 
 			<StyledBlogDetailsPage>
 				<div className='blogDetailsOuterWrapper'>
-					<Container width='80%' style={{ gap: '2rem' }} flex>
+					<Container
+						width='80%'
+						style={{ gap: '2rem' }}
+						flex
+					>
 						<div className='blogDetailsInnerWrapper'>
 							<time className='publishingDate'>{blogPublishingDate}</time>
 
@@ -78,8 +133,34 @@ export default function Blog({ blogPageData }) {
 					</Container>
 				</div>
 
-				<MarkdownContent contentToParse={content} />
+				<Container
+					width='80%'
+					flex
+					className='mainContent'
+				>
+					<MarkdownContent contentToParse={content} />
+
+					<aside className='navigationPane'>
+						<h3>In this article</h3>
+
+						<div>
+							{parsedHeadings?.length > 0 &&
+								parsedHeadings.map((item, index) => (
+									<Link
+										key={index}
+										href={`#${item
+											.slice(1, item.length - 1)
+											.replaceAll(' ', '-')}`}
+									>
+										{item}
+									</Link>
+								))}
+						</div>
+					</aside>
+				</Container>
 			</StyledBlogDetailsPage>
+
+			<ScrollToTopButton />
 		</>
 	);
 }
