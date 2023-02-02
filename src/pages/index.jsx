@@ -27,7 +27,7 @@ export default function Home({ blogs }) {
 					{blogs.length > 0 &&
 						blogs.slice(1, 6).map((blog) => {
 							const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
-							const shallowUrl = blog?.attributes?.title
+							const shallowUrl = blog?.title
 								.replaceAll(regexPatternToReplace, '-')
 								.toLowerCase();
 
