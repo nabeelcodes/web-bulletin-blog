@@ -79,6 +79,7 @@ export default function MyApp({ Component, pageProps }) {
 					content='https://web-bulletin.vercel.app/'
 					key='twitterUrl'
 				/>
+				
 			</Head>
 
 			<ThemeProvider theme={theme}>
