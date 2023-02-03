@@ -53,6 +53,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    scroll-behavior: smooth;
     @media ${({ theme }) => theme.breakpoints.noHover} {
       -webkit-tap-highlight-color: transparent;
     }

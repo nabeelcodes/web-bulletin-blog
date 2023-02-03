@@ -1,10 +1,35 @@
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'styles/globalStyles';
+import { useEffect } from 'react';
 import LayoutContainer from 'components/LayoutContainer/LayoutContainer';
 import theme from 'styles/theme';
 import Head from 'next/head';
+import NProgress from 'nprogress';
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps, router }) {
+	NProgress.configure({ showSpinner: false });
+
+	useEffect(() => {
+		/* Exclusively added to manage NProgress bar */
+		const handleStart = () => {
+			NProgress.start();
+		};
+
+		const handleStop = () => {
+			NProgress.done();
+		};
+
+		router.events.on('routeChangeStart', handleStart);
+		router.events.on('routeChangeComplete', handleStop);
+		router.events.on('routeChangeError', handleStop);
+
+		return () => {
+			router.events.off('routeChangeStart', handleStart);
+			router.events.off('routeChangeComplete', handleStop);
+			router.events.off('routeChangeError', handleStop);
+		};
+	}, [router]);
+
 	return (
 		<>
 			<Head>
