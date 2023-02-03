@@ -11,11 +11,11 @@ export default function MyApp({ Component, pageProps }) {
 				{/* SEO TAGS */}
 				<meta
 					name='robots'
-					content='index,follow'
+					content='index,follow,nosnippet,max-snippet:-1,max-image-preview:none,noarchive,noimageindex,max-video-preview:-1,notranslate'
 				/>
 				<meta
 					name='googlebot'
-					content='index,follow'
+					content='index,follow,nosnippet,max-snippet:-1,max-image-preview:none,noarchive,noimageindex,max-video-preview:-1,notranslate'
 				/>
 				<meta
 					name='title'
@@ -79,7 +79,6 @@ export default function MyApp({ Component, pageProps }) {
 					content='https://web-bulletin.vercel.app/'
 					key='twitterUrl'
 				/>
-				
 			</Head>
 
 			<ThemeProvider theme={theme}>

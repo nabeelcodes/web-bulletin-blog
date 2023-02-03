@@ -11,6 +11,7 @@ export default function LayoutContainer({ children }) {
 	NProgress.configure({ showSpinner: false });
 
 	useEffect(() => {
+		/* Exclusively added to manage NProgress bar */
 		const handleStart = () => {
 			NProgress.start();
 		};
