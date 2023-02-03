@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name='description'
-					content='A simple and fast web blog built with NextJS on the frontend and Headless CMS(Strapi) for the backend.'
+					content='A simple and fast web blog built with NextJS on the frontend and Supabase(BaaS) for the backend.'
 					key='description'
 				/>
 				<meta
@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					property='og:description'
-					content='A simple and fast web blog built with NextJS on the frontend and Headless CMS(Strapi) for the backend.'
+					content='A simple and fast web blog built with NextJS on the frontend and Supabase(BaaS) for the backend.'
 					key='ogDescription'
 				/>
 				<meta
@@ -66,7 +66,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					property='twitter:description'
-					content='A simple and fast web blog built with NextJS on the frontend and Headless CMS(Strapi) for the backend.'
+					content='A simple and fast web blog built with NextJS on the frontend and Supabase(BaaS) for the backend.'
 					key='twitterDescription'
 				/>
 				<meta
