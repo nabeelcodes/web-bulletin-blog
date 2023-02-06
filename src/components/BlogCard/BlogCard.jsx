@@ -5,15 +5,16 @@ import { StyledBlogCard } from './BlogCard.styled';
 
 export default function BlogCard({ blogDetails }) {
 	const [onAllBlogsPage, setOnAllBlogsPage] = useState(false);
-	const { title, description, published_on } = blogDetails;
+	const { title, description, content, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 	const router = useRouter();
 
-	const content = 'lorem ipsum';
-	const readingStats = readingTime(content);
+	const readingStats = readingTime(content ? content : 'foobar');
 
 	useEffect(() => {
-		router.asPath === '/blogs' ? setOnAllBlogsPage(true) : setOnAllBlogsPage(false);
+		router.asPath === '/blogs'
+			? setOnAllBlogsPage(true)
+			: setOnAllBlogsPage(false);
 	}, [router.asPath, onAllBlogsPage]);
 
 	return (

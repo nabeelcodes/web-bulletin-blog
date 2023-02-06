@@ -24,7 +24,7 @@ export const StyledBlogCard = styled.article`
 			flex-direction: column;
 			justify-content: space-between;
 			background-color: white;
-			border-radius: 5px;
+			border-radius: 6px;
 			position: relative;
 
 			&:before {
@@ -35,7 +35,12 @@ export const StyledBlogCard = styled.article`
 				top: -7px;
 				width: 104.5%;
 				height: 104.5%;
-				background: radial-gradient(circle at 50% 50%, #8b00ff, #ff64bd, #ffd4d4);
+				background: radial-gradient(
+					circle at 50% 50%,
+					#8b00ff,
+					#ff64bd,
+					#ffd4d4
+				);
 				background-size: 200% 200%;
 				background-position: 0% 100%;
 				border-radius: 10px;
@@ -68,7 +73,7 @@ export const StyledBlogCard = styled.article`
 				@media ${({ theme }) => theme.breakpoints.xs} {
 					left: -5px;
 					top: -5.5px;
-					height: 103.6%;
+					height: 104.5%;
 				}
 
 				@media ${({ theme }) => theme.breakpoints.xss} {

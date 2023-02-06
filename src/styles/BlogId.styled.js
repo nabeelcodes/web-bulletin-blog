@@ -49,6 +49,10 @@ export const StyledBlogDetailsPage = styled.section`
 		border-radius: 5px;
 	}
 
+	.mainContent {
+		gap: 3rem;
+	}
+
 	.navigationPane {
 		align-self: flex-start;
 		position: sticky;
@@ -129,7 +133,7 @@ export const StyledBlogDetailsPage = styled.section`
 
 	@media ${({ theme }) => theme.breakpoints.sm} {
 		.blogDetailsOuterWrapper {
-			margin-bottom: 3rem;
+			margin-bottom: 2rem;
 			padding-bottom: 3rem;
 		}
 
@@ -139,6 +143,10 @@ export const StyledBlogDetailsPage = styled.section`
 			.publishingDate {
 				font-size: 1rem;
 			}
+		}
+
+		.mainContent {
+			width: 90%;
 		}
 	}
 `;

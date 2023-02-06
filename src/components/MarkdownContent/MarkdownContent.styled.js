@@ -115,7 +115,7 @@ export const StyledMarkdownContent = styled.article`
 	}
 
 	@media ${({ theme }) => theme.breakpoints.sm} {
-		width: 90%;
+		width: 100%;
 		margin-inline: auto;
 
 		p,
