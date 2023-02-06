@@ -152,7 +152,7 @@ export default function Blog({ blogPageData }) {
 											.slice(1, item.length - 1)
 											.replaceAll(' ', '-')}`}
 									>
-										{item}
+										<a target='_self'>{item}</a>
 									</Link>
 								))}
 						</div>
