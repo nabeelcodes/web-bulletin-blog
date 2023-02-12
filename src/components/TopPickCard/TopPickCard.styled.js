@@ -32,6 +32,11 @@ export const StyledTopPickCard = styled.article`
 		}
 	}
 
+	.imageContainerWrapper {
+		overflow: hidden;
+		border-radius: 10px;
+	}
+
 	.innerContainer {
 		time {
 			display: inline-block;

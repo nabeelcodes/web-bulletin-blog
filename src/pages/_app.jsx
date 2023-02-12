@@ -1,15 +1,18 @@
+import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'styles/globalStyles';
 import { useEffect } from 'react';
 import LayoutContainer from 'components/LayoutContainer/LayoutContainer';
-import theme from 'styles/theme';
-import Head from 'next/head';
 import NProgress from 'nprogress';
+import Head from 'next/head';
+import theme from 'styles/theme';
 
 export default function MyApp({ Component, pageProps, router }) {
 	NProgress.configure({ showSpinner: false });
 
 	useEffect(() => {
+		/* Always scroll to top */
+		window.scrollTo(0, 0);
 		/* Exclusively added to manage NProgress bar */
 		const handleStart = () => {
 			NProgress.start();
@@ -108,9 +111,11 @@ export default function MyApp({ Component, pageProps, router }) {
 
 			<ThemeProvider theme={theme}>
 				<GlobalStyles />
-				<LayoutContainer>
-					<Component {...pageProps} />
-				</LayoutContainer>
+				<AnimatePresence mode='wait'>
+					<LayoutContainer key={Math.random()}>
+						<Component {...pageProps} />
+					</LayoutContainer>
+				</AnimatePresence>
 			</ThemeProvider>
 		</>
 	);
