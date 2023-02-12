@@ -1,30 +1,20 @@
 import readingTime from 'reading-time';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
 import { StyledBlogCard } from './BlogCard.styled';
 
-export default function BlogCard({ blogDetails }) {
-	const [onAllBlogsPage, setOnAllBlogsPage] = useState(false);
+export default function BlogCard({ blogDetails, allBlogsList = false }) {
 	const { title, description, content, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
-	const router = useRouter();
 
 	const readingStats = readingTime(content ? content : 'foobar');
 
-	useEffect(() => {
-		router.asPath === '/blogs'
-			? setOnAllBlogsPage(true)
-			: setOnAllBlogsPage(false);
-	}, [router.asPath, onAllBlogsPage]);
-
 	return (
-		<StyledBlogCard allBlogsList={onAllBlogsPage ? true : false}>
+		<StyledBlogCard allBlogsList={allBlogsList}>
 			<div className='summary'>
 				<h3>{title}</h3>
 				<p>{description}</p>
 			</div>
 
-			{onAllBlogsPage && (
+			{allBlogsList && (
 				<div className='stats'>
 					<time className='publishingDate'>{blogPublishingDate}</time>
 					<div>

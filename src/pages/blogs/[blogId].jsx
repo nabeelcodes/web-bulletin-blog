@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Container } from 'styles/utilities';
 import { StyledBlogDetailsPage } from 'styles/BlogId.styled';
@@ -146,14 +145,15 @@ export default function Blog({ blogPageData }) {
 						<div>
 							{parsedHeadings?.length > 0 &&
 								parsedHeadings.map((item, index) => (
-									<Link
+									<a
+										target='_self'
 										key={index}
 										href={`#${item
 											.slice(1, item.length - 1)
 											.replaceAll(' ', '-')}`}
 									>
-										<a target='_self'>{item}</a>
-									</Link>
+										{item}
+									</a>
 								))}
 						</div>
 					</aside>

@@ -26,7 +26,10 @@ export default function BlogList({ blogs }) {
 								href={`/blogs/${blog?.id}-${shallowUrl}`}
 							>
 								<a>
-									<BlogCard blogDetails={blog} />
+									<BlogCard
+										blogDetails={blog}
+										allBlogsList={+true}
+									/>
 								</a>
 							</Link>
 						);
