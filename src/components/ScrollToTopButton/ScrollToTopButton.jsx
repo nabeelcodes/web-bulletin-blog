@@ -1,8 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { StyledButton } from './ScrollToTopButton.styled';
+import { motion } from 'framer-motion';
 
 export default function ScrollToTopButton() {
 	const [gotoTop, setGotoTop] = useState(false);
+	const scrollButtonRef = useRef(null);
 
 	const scrollToTop = () => {
 		window.scroll({
@@ -17,6 +19,16 @@ export default function ScrollToTopButton() {
 		} else {
 			setGotoTop(false);
 		}
+
+		/* pushing the button up when it's about to hit footer */
+		if (
+			window.innerHeight + window.scrollY >=
+			document.body.offsetHeight - 500
+		) {
+			scrollButtonRef?.current?.classList?.add('move-up');
+		} else {
+			scrollButtonRef?.current?.classList?.remove('move-up');
+		}
 	}, [setGotoTop]);
 
 	useEffect(() => {
@@ -30,10 +42,15 @@ export default function ScrollToTopButton() {
 	return (
 		<>
 			{gotoTop && (
-				<StyledButton onClick={scrollToTop}>
+				<StyledButton
+					as={motion.button}
+					ref={scrollButtonRef}
+					whileTap={{ scale: 0.85 }}
+					onClick={scrollToTop}
+				>
 					<svg
-						width='35'
-						height='32'
+						width='25'
+						height='25'
 						viewBox='0 0 24 24'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'

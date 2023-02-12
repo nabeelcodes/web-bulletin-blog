@@ -10,11 +10,11 @@ export default function Header() {
 		e.preventDefault();
 		router.push('/');
 	};
-	const handleClickForBlogs = (e) => {
+	const handleClickForNavLinkBlogs = (e) => {
 		e.preventDefault();
 		router.push('/blogs');
 	};
-	const handleClickForAbout = (e) => {
+	const handleClickForNavLinkAbout = (e) => {
 		e.preventDefault();
 		router.push('/about');
 	};
@@ -26,19 +26,28 @@ export default function Header() {
 				width='80%'
 				as='nav'
 			>
-				<div className='navBrand'>
-					<span onClick={handleClickForNavBrand}>
+				<div
+					className='navBrand'
+					onClick={handleClickForNavBrand}
+				>
+					<span>
 						<NavLogo />
 					</span>
 				</div>
 
 				<div className='navMenu'>
 					<ul>
-						<StyledLi activeLink={router.asPath === '/blogs' ? true : false}>
-							<span onClick={handleClickForBlogs}>Blogs</span>
+						<StyledLi
+							activeLink={router.asPath === '/blogs' ? true : false}
+							onClick={handleClickForNavLinkBlogs}
+						>
+							<span>Blogs</span>
 						</StyledLi>
-						<StyledLi activeLink={router.asPath === '/about' ? true : false}>
-							<span onClick={handleClickForAbout}>About</span>
+						<StyledLi
+							activeLink={router.asPath === '/about' ? true : false}
+							onClick={handleClickForNavLinkAbout}
+						>
+							<span>About</span>
 						</StyledLi>
 					</ul>
 				</div>
