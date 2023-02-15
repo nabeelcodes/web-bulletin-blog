@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"postbuild": "next-sitemap"
 	},
 	"dependencies": {
 		"@supabase/supabase-js": "^2.2.0",
@@ -14,6 +15,7 @@
 		"framer-motion": "^9.0.2",
 		"markdown-parser": "^0.0.8",
 		"next": "12.1.6",
+		"next-sitemap": "^3.1.52",
 		"nextjs-progressbar": "^0.0.16",
 		"react": "18.1.0",
 		"react-dom": "18.1.0",

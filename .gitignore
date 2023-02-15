@@ -38,3 +38,6 @@ TEST.md
 TODOs.md
 supabaseApiData.json
 strapiApiData.json
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-0.xml
