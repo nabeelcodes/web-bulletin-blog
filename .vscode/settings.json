@@ -19,5 +19,8 @@
     "tthovesvar",
     "ttnormspromono",
     "twitterurl"
+  ],
+  "cSpell.ignoreWords": [
+    "progressbar"
   ]
 }
