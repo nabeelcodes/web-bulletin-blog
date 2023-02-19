@@ -11,13 +11,8 @@ export const StyledFooter = styled.footer`
 	}
 
 	.footMenu {
-		ul {
-			display: flex;
-		}
-
-		li:not(:last-child) {
-			margin-right: 2rem;
-		}
+		display: flex;
+		gap: 2rem;
 
 		svg {
 			cursor: pointer;
@@ -34,9 +29,7 @@ export const StyledFooter = styled.footer`
 		}
 
 		.footMenu {
-			li:not(:last-child) {
-				margin-right: 1rem;
-			}
+			gap: 1rem;
 		}
 	}
 `;

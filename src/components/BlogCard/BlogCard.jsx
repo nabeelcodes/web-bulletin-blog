@@ -1,20 +1,20 @@
 import readingTime from 'reading-time';
 import { StyledBlogCard } from './BlogCard.styled';
 
-export default function BlogCard({ blogDetails, allBlogsList = false }) {
+export default function BlogCard({ blogDetails, onBlogsPage = false }) {
 	const { title, description, content, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 
 	const readingStats = readingTime(content ? content : 'foobar');
 
 	return (
-		<StyledBlogCard allBlogsList={allBlogsList}>
+		<StyledBlogCard onBlogsPage={onBlogsPage}>
 			<div className='summary'>
 				<h3>{title}</h3>
 				<p>{description}</p>
 			</div>
 
-			{allBlogsList && (
+			{onBlogsPage && (
 				<div className='stats'>
 					<time className='publishingDate'>{blogPublishingDate}</time>
 					<div>

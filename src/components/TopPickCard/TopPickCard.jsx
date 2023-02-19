@@ -40,9 +40,9 @@ export default function TopPickCard({ blogDetails }) {
 									<Image
 										src={url}
 										alt={alternativeText}
+										quality={100}
 										width={1300}
 										height={750}
-										quality={100}
 										objectFit='cover'
 										placeholder='blur'
 										blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='

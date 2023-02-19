@@ -13,28 +13,26 @@ export default function Footer() {
 			>
 				<div className='footBrand'>Web Bulletin &trade;</div>
 
-				<div className='footMenu'>
-					<ul>
-						<li>
-							<a
-								href='https://in.linkedin.com/in/nabeel-asif-2549ba142'
-								target='_blank'
-								rel='noreferrer'
-							>
-								<LinkedinLogo />
-							</a>
-						</li>
-						<li>
-							<a
-								href='https://github.com/nabeelcodes/web-bulletin-blog'
-								target='_blank'
-								rel='noreferrer'
-							>
-								<GithubLogo />
-							</a>
-						</li>
-					</ul>
-				</div>
+				<ul className='footMenu'>
+					<li>
+						<a
+							href='https://in.linkedin.com/in/nabeel-asif-2549ba142'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<LinkedinLogo />
+						</a>
+					</li>
+					<li>
+						<a
+							href='https://github.com/nabeelcodes/web-bulletin-blog'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<GithubLogo />
+						</a>
+					</li>
+				</ul>
 			</Container>
 		</StyledFooter>
 	);

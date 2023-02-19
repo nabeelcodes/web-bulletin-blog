@@ -28,7 +28,7 @@ export default function BlogList({ blogs }) {
 								<a>
 									<BlogCard
 										blogDetails={blog}
-										allBlogsList={+true}
+										onBlogsPage={+true}
 									/>
 								</a>
 							</Link>
