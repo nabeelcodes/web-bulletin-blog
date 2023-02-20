@@ -11,6 +11,7 @@ const CodeHighlight = ({ inline, className, children }) => {
 		<SyntaxHighlighter
 			style={githubGist}
 			language={className}
+			wrapLines={true}
 			PreTag='div'
 		>
 			{children[0]}
