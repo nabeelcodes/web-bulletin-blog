@@ -69,6 +69,12 @@ export const StyledBlogDetailsPage = styled.section`
 
 		div {
 			border-left: 3px solid ${({ theme }) => theme.colors.secondaryAccentLight};
+			max-height: calc(100vh - 300px);
+			overflow-y: auto;
+
+			&::-webkit-scrollbar {
+				width: 4px;
+			}
 		}
 
 		a {
