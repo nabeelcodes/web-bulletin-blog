@@ -11,6 +11,8 @@ export default {
 		primaryAccent: '#fea93c',
 		secondaryAccent: '#8b00ff',
 		secondaryAccentLight: '#8b00ff1a',
+		borderAnimationPink: '#ff64bd',
+		borderAnimationPeach: '#ffd4d4',
 		backgroundLight: '#ffffff',
 		backgroundDark: '#2e2e2e',
 		backgroundDarker: '#242526',
@@ -32,8 +34,11 @@ export default {
 
 		hover: 'only screen and (hover: hover) and (pointer: fine)',
 		hoverNone: 'only screen and (hover: none) and (pointer: coarse)',
-		mdHover: 'only screen and (max-width: 769px) and (hover: none) and (pointer: coarse)',
-		ipadHover: 'only screen and (max-width: 821px) and (hover: none) and (pointer: coarse)',
-		lgHover: 'only screen and (max-width: 1025px) and (hover: none) and (pointer: coarse)'
+		mdHover:
+			'only screen and (max-width: 769px) and (hover: none) and (pointer: coarse)',
+		ipadHover:
+			'only screen and (max-width: 821px) and (hover: none) and (pointer: coarse)',
+		lgHover:
+			'only screen and (max-width: 1025px) and (hover: none) and (pointer: coarse)'
 	}
 };

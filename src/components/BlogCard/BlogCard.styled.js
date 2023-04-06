@@ -31,53 +31,19 @@ export const StyledBlogCard = styled.article`
 				content: '';
 				position: absolute;
 				z-index: -1;
-				left: -7.5px;
-				top: -7px;
-				width: 104.5%;
-				height: 104.5%;
+				inset: -0.5rem;
+				border-radius: inherit;
 				background: radial-gradient(
 					circle at 50% 50%,
-					#8b00ff,
-					#ff64bd,
-					#ffd4d4
+					${({ theme }) => theme.colors.secondaryAccent},
+					${({ theme }) => theme.colors.borderAnimationPink},
+					${({ theme }) => theme.colors.borderAnimationPeach}
 				);
 				background-size: 200% 200%;
 				background-position: 0% 100%;
-				border-radius: 10px;
-
-				@media ${({ theme }) => theme.breakpoints.xl} {
-					left: -8.5px;
-					top: -8px;
-					width: 103.4%;
-					height: 106%;
-				}
-
-				@media ${({ theme }) => theme.breakpoints.lg} {
-					left: -6.8px;
-					height: 105%;
-				}
 
 				@media ${({ theme }) => theme.breakpoints.ipad} {
-					left: -7.8px;
-					height: 106.5%;
-					width: 102.4%;
-				}
-
-				@media ${({ theme }) => theme.breakpoints.sm} {
-					left: -8px;
-					top: -6.5px;
-					height: 105.6%;
-					width: 102.7%;
-				}
-
-				@media ${({ theme }) => theme.breakpoints.xs} {
-					left: -5px;
-					top: -5.5px;
-					height: 104.5%;
-				}
-
-				@media ${({ theme }) => theme.breakpoints.xss} {
-					left: -4.5px;
+					inset: -0.4rem;
 				}
 			}
 
@@ -100,10 +66,7 @@ export const StyledBlogCard = styled.article`
 			}
 
 			&:hover:before {
-				animation-name: borderAnimation;
-				animation-duration: 1s;
-				animation-iteration-count: infinite;
-				animation-timing-function: linear;
+				animation: borderAnimation 1.5s linear infinite;
 			}
 
 			.summary {
@@ -148,3 +111,60 @@ export const StyledBlogCard = styled.article`
 			}
 		`};
 `;
+
+/*
+AN ALTERNATIVE WAY OF DOING BORDER ANIMATION
+	we can use @property approach but browser support is not that good as of April-2023
+
+${({ onBlogsPage }) =>
+		onBlogsPage &&
+		css`
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			background-color: white;
+			border-radius: 6px;
+			position: relative;
+
+			Kevin Powell strat : https://youtu.be/-VOUK-xFAyk
+			@property --gradient-angle {
+				syntax: '<angle>';
+				initial-value: 0deg;
+				inherits: false;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				inset: -0.5rem;
+				border-radius: inherit;
+				background: conic-gradient(
+					from var(--gradient-angle),
+					#ffd4d4,
+					#ffd4d4,
+					#ff64bd,
+					#8b00ff,
+					#ff64bd,
+					#ffd4d4
+				);
+
+				@media ${({ theme }) => theme.breakpoints.ipad} {
+					inset: -0.4rem;
+				}
+			}
+
+			@keyframes rotation-animation {
+				0% {
+					--gradient-angle: 0deg;
+				}
+				100% {
+					--gradient-angle: 360deg;
+				}
+			}
+
+			&:hover:before {
+				animation: rotation-animation 1.5s linear infinite;
+			}
+		`};
+*/
