@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { StyledHeader, StyledLi } from './Header.styled';
 import { Container } from 'styles/utilities';
 import NavLogo from 'components/NavLogo/NavLogo';
+import useCheckUrlPath from 'hooks/useCheckUrlPath';
 
 export default function Header() {
 	const router = useRouter();
@@ -38,13 +39,13 @@ export default function Header() {
 				<div className='navMenu'>
 					<ul>
 						<StyledLi
-							activeLink={router.asPath === '/blogs' ? true : false}
+							activeLink={useCheckUrlPath('/blogs')}
 							onClick={handleClickForNavLinkBlogs}
 						>
 							<span>Blogs</span>
 						</StyledLi>
 						<StyledLi
-							activeLink={router.asPath === '/about' ? true : false}
+							activeLink={useCheckUrlPath('/about')}
 							onClick={handleClickForNavLinkAbout}
 						>
 							<span>About</span>

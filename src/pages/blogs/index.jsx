@@ -26,10 +26,7 @@ export default function BlogList({ blogs }) {
 								href={`/blogs/${blog?.id}-${shallowUrl}`}
 							>
 								<a>
-									<BlogCard
-										blogDetails={blog}
-										onBlogsPage={+true}
-									/>
+									<BlogCard blogDetails={blog} />
 								</a>
 							</Link>
 						);
@@ -43,7 +40,7 @@ export const getStaticProps = async () => {
 	/* fetching list of SORTED(by id) blog posts from Supabase postgres DB */
 	let { data, error } = await supabase
 		.from('blogs')
-		.select('*')
+		.select('id,title,description,published_on,content')
 		.order('id', { ascending: false });
 
 	if (error) {

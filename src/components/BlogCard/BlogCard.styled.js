@@ -17,8 +17,8 @@ export const StyledBlogCard = styled.article`
 		margin-top: 1rem;
 	}
 
-	${({ onBlogsPage }) =>
-		onBlogsPage &&
+	${({ gradientEffects }) =>
+		gradientEffects &&
 		css`
 			display: flex;
 			flex-direction: column;

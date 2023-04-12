@@ -1,14 +1,15 @@
 import readingTime from 'reading-time';
 import { StyledBlogCard } from './BlogCard.styled';
+import useCheckUrlPath from 'hooks/useCheckUrlPath';
 
-export default function BlogCard({ blogDetails, onBlogsPage = false }) {
+export default function BlogCard({ blogDetails }) {
 	const { title, description, content, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
-
 	const readingStats = readingTime(content ? content : 'foobar');
+	const onBlogsPage = useCheckUrlPath('/blogs');
 
 	return (
-		<StyledBlogCard onBlogsPage={onBlogsPage}>
+		<StyledBlogCard gradientEffects={onBlogsPage}>
 			<div className='summary'>
 				<h3>{title}</h3>
 				<p>{description}</p>
@@ -17,7 +18,7 @@ export default function BlogCard({ blogDetails, onBlogsPage = false }) {
 			{onBlogsPage && (
 				<div className='stats'>
 					<time className='publishingDate'>{blogPublishingDate}</time>
-					<div>
+					<div className='readingStats'>
 						<svg
 							width='15'
 							height='15'
@@ -40,6 +41,7 @@ export default function BlogCard({ blogDetails, onBlogsPage = false }) {
 								strokeLinejoin='round'
 							/>
 						</svg>
+
 						<span>{readingStats.text}</span>
 					</div>
 				</div>

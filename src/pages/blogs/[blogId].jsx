@@ -8,7 +8,7 @@ import MarkdownContent from 'components/MarkdownContent/MarkdownContent';
 import ScrollToTopButton from 'components/ScrollToTopButton/ScrollToTopButton';
 import useHeadingsParser from 'hooks/useHeadingsParser';
 
-// Fetching data from supabase using getInitialProps
+/* Fetching data from supabase using getInitialProps */
 Blog.getInitialProps = async (ctx) => {
 	/* extracting numeric value of blogId from ctx */
 	const blogId = ctx.query.blogId.split('-')[0];
@@ -32,13 +32,10 @@ Blog.getInitialProps = async (ctx) => {
 };
 
 export default function Blog({ blogPageData }) {
-	const { title, description, content, published_on } = blogPageData;
-	const { url, alternativeText } = blogPageData?.images?.banner_image;
-
+	const { title, description, content, published_on, images } = blogPageData;
+	const { url, alternativeText } = images?.banner_image;
 	const { parsedHeadings } = useHeadingsParser(content);
-
-	const router = useRouter();
-	const currentUrl = `https://web-bulletin.vercel.app${router.asPath}`;
+	const currentUrl = `https://web-bulletin.vercel.app${useRouter().asPath}`;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
 
 	return (

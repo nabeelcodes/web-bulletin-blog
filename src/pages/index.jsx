@@ -86,7 +86,7 @@ export const getStaticProps = async () => {
 	/* fetching list of SORTED(by id) blog posts from Supabase postgres DB */
 	let { data, error } = await supabase
 		.from('blogs')
-		.select('*')
+		.select('id,title,description,published_on,images')
 		.order('id', { ascending: false });
 
 	if (error) {
