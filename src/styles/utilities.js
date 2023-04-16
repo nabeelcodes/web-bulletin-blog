@@ -53,22 +53,26 @@ export const Container = styled.div`
 					justify-content: center;
 					align-items: center;
 					gap: 12px;
-					border: 4.5px solid black;
+					color: ${({ theme }) => theme.colors.secondaryAccent};
+					border: 4.5px solid ${({ theme }) => theme.colors.secondaryAccent};
 					border-radius: 25px;
 					padding: 0.5rem 1rem;
 					font-size: 1.1rem;
 					font-weight: 500;
 					white-space: nowrap;
 					background-color: transparent;
-					transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+					transition: padding 0.3s ease-in-out;
 
 					.chevronRight {
 						display: grid;
 						place-items: center;
 
 						svg {
-							min-width: 15px;
-							min-height: 15px;
+							width: 20px;
+							height: 20px;
+							fill: ${({ theme }) => theme.colors.secondaryAccent};
+							stroke: ${({ theme }) => theme.colors.secondaryAccent};
+							stroke-width: 3px;
 
 							path {
 								transition: stroke 0.3s ease-in-out;
@@ -78,7 +82,7 @@ export const Container = styled.div`
 
 					@keyframes arrowMovement {
 						from {
-							transform: translateX(4px);
+							transform: translateX(7px);
 						}
 						to {
 							transform: translateX(-4px);
@@ -87,15 +91,10 @@ export const Container = styled.div`
 
 					@media ${({ theme }) => theme.breakpoints.hover} {
 						&:hover {
-							background-color: black;
-							color: white;
+							padding: 0.5rem 1.35rem;
 
 							svg {
-								animation: arrowMovement 0.7s linear infinite alternate;
-
-								path {
-									stroke: white;
-								}
+								animation: arrowMovement 0.5s linear infinite alternate;
 							}
 						}
 					}
@@ -114,11 +113,11 @@ export const Container = styled.div`
 				pointer-events: none;
 
 				/* customizable */
-				color: #ededed;
-				font-size: 1rem;
-				font-weight: 700;
+				color: ${({ theme }) => theme.colors.background};
+				font-size: 1.05rem;
+				font-weight: 500;
 				border-radius: 5px;
-				padding: 0.2rem 0.5rem;
+				padding: 0.2rem 0.8rem;
 				box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px,
 					rgb(14 30 37 / 32%) 0px 2px 16px 0px;
 				transition: all 0.15s ease;
@@ -132,7 +131,7 @@ export const Container = styled.div`
 					z-index: 2;
 
 					/* customizable */
-					background: black;
+					background: ${({ theme }) => theme.colors.fontColor};
 					margin-top: -40px;
 					margin-left: 50px;
 				}
@@ -153,7 +152,7 @@ export const Container = styled.div`
 
 			a {
 				display: inline-block;
-				background-color: #8b00ff40;
+				background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
 				padding: 0 0.3em;
 				margin-inline: 0.1em;
 				border-radius: 5px;
@@ -183,3 +182,4 @@ export const AllBlogsListContainer = styled.section`
 		width: 90%;
 	}
 `;
+

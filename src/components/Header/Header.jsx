@@ -32,7 +32,7 @@ export default function Header() {
 					onClick={handleClickForNavBrand}
 				>
 					<span>
-						<NavLogo />
+						<NavLogo darkMode={true} />
 					</span>
 				</div>
 

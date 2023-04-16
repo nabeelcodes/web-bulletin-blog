@@ -50,26 +50,18 @@ export default function Home({ blogs }) {
 									see more
 									<span className='chevronRight'>
 										<svg
-											width='15'
-											height='15'
-											viewBox='0 0 17 17'
+											viewBox='0 0 23 23'
 											fill='none'
 											xmlns='http://www.w3.org/2000/svg'
 										>
-											<path
-												d='M1.46762 8.11511H15.4676'
-												stroke='black'
-												strokeWidth='3'
-												strokeLinecap='round'
-												strokeLinejoin='round'
-											/>
-											<path
-												d='M8.46762 1.11511L15.4676 8.11511L8.46762 15.1151'
-												stroke='black'
-												strokeWidth='3'
-												strokeLinecap='round'
-												strokeLinejoin='round'
-											/>
+											<g id='Arrow / Arrow_Right_LG'>
+												<path
+													id='Vector'
+													d='M21 12L16 7M21 12L16 17M21 12H3'
+													strokeLinecap='round'
+													strokeLinejoin='round'
+												/>
+											</g>
 										</svg>
 									</span>
 								</button>

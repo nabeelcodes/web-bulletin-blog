@@ -8,8 +8,7 @@ export const StyledButton = styled.button`
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
-	background-color: white;
-	color: white;
+	background-color: ${({ theme }) => theme.colors.secondaryAccent};
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;

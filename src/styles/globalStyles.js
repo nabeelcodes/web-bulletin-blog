@@ -60,8 +60,9 @@ export const GlobalStyles = createGlobalStyle`
   }
     
   body {
-    background-color: ${({ theme }) => theme.colors.backgroundLight};
-    color: ${({ theme }) => theme.colors.dark};
+    position: relative;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.fontColor};
     font-family: ${({ theme }) => theme.fonts.main};
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
@@ -90,4 +91,19 @@ export const GlobalStyles = createGlobalStyle`
   strong {
     font-weight: 650;
   }
+
+  .themeToggler {
+		cursor: pointer;
+		position: fixed;
+		left: 0;
+		bottom: 25%;
+		padding: 0.5rem 0.8rem;
+		background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
+		border: none;
+		border-radius: 0 50px 50px 0;
+
+		path {
+			fill: ${({ theme }) => theme.colors.secondaryAccent};
+		}
+	}
 `;

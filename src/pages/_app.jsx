@@ -1,12 +1,16 @@
-import { AnimatePresence } from 'framer-motion';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from 'styles/globalStyles';
 import LayoutContainer from 'components/LayoutContainer/LayoutContainer';
-import NextNProgress from 'nextjs-progressbar';
+import { ThemeProvider } from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+import { GlobalStyles } from 'styles/globalStyles';
+import { lightTheme, darkTheme } from 'styles/theme';
+import { useState } from 'react';
 import Head from 'next/head';
-import theme from 'styles/theme';
+import LightLogo from 'components/LightLogo/LightLogo';
+import DarkLogo from 'src/DarkLogo/DarkLogo';
 
 export default function MyApp({ Component, pageProps }) {
+	const [isDarkTheme, setIsDarkTheme] = useState(true);
+
 	return (
 		<>
 			<Head>
@@ -83,15 +87,7 @@ export default function MyApp({ Component, pageProps }) {
 				/>
 			</Head>
 
-			<ThemeProvider theme={theme}>
-				<NextNProgress
-					options={{ showSpinner: false }}
-					showOnShallow={false}
-					stopDelayMs={200}
-					color='#d4a3ff'
-					height={5}
-				/>
-
+			<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
 				<GlobalStyles />
 
 				<AnimatePresence mode='wait'>
@@ -99,6 +95,13 @@ export default function MyApp({ Component, pageProps }) {
 						<Component {...pageProps} />
 					</LayoutContainer>
 				</AnimatePresence>
+
+				<button
+					className='themeToggler'
+					onClick={() => setIsDarkTheme((prevState) => !prevState)}
+				>
+					{isDarkTheme ? <LightLogo /> : <DarkLogo />}
+				</button>
 			</ThemeProvider>
 		</>
 	);

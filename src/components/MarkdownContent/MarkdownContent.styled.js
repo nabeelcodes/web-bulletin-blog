@@ -16,7 +16,7 @@ export const StyledMarkdownContent = styled.article`
 	}
 
 	pre div {
-		background-color: rgba(0, 0, 0, 0.05) !important;
+		background-color: ${({ theme }) => theme.colors.codeBackground} !important;
 		font-size: 0.85em;
 		border-radius: 3px;
 	}
@@ -37,6 +37,8 @@ export const StyledMarkdownContent = styled.article`
 	p code,
 	li code {
 		background-color: rgba(0, 0, 0, 0.05);
+		background-color: ${({ theme }) => theme.colors.codeBackground} !important;
+		color: black;
 		border-radius: 3px;
 		padding: 2px 4px;
 		font-size: 0.85em;

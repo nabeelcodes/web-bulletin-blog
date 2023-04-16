@@ -23,7 +23,7 @@ export const StyledBlogCard = styled.article`
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			background-color: white;
+			background-color: ${({ theme }) => theme.colors.background};
 			border-radius: 6px;
 			position: relative;
 
@@ -100,7 +100,7 @@ export const StyledBlogCard = styled.article`
 					padding: 0.5rem 1rem;
 					font-weight: 500;
 					font-size: 0.89rem;
-					border: 1px solid #00000070;
+					border: 1px solid ${({ theme }) => theme.colors.fontColor};
 					border-radius: 50px;
 				}
 

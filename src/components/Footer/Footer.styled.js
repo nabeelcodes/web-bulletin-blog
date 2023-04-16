@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
 	height: 100px;
-	border-top: 1px solid #eaeaea;
+	border-top: 1.5px solid ${({ theme }) => theme.colors.secondaryAccentLight};
 
 	.footBrand {
 		font-size: 1.5rem;

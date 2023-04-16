@@ -4,7 +4,7 @@ import { css } from 'styled-components';
 export const StyledHeader = styled.header`
 	height: 70px;
 	width: 100%;
-	border-bottom: 1px solid #eaeaea;
+	border-bottom: 1.5px solid ${({ theme }) => theme.colors.secondaryAccentLight};
 
 	.navBrand {
 		height: 100%;

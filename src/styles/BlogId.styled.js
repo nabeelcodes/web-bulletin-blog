@@ -34,7 +34,7 @@ export const StyledBlogDetailsPage = styled.section`
 	}
 
 	.blogDescription {
-		color: #000000b5;
+		color: ${({ theme }) => theme.colors.fontColor};
 		font-size: 1.12rem;
 		line-height: 1.7rem;
 	}
