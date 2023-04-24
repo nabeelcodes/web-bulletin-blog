@@ -98,12 +98,14 @@ export const GlobalStyles = createGlobalStyle`
 		left: 0;
 		bottom: 25%;
 		padding: 0.5rem 0.8rem;
-		background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
+		background-color: ${({ theme }) => theme.colors.secondaryAccent};
 		border: none;
 		border-radius: 0 50px 50px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 		path {
 			fill: ${({ theme }) => theme.colors.secondaryAccent};
+			fill: white;
 		}
 	}
 `;

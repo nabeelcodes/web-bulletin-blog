@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from 'styles/theme';
 import { useState } from 'react';
 import Head from 'next/head';
 import LightLogo from 'components/LightLogo/LightLogo';
-import DarkLogo from 'src/DarkLogo/DarkLogo';
+import DarkLogo from 'components/DarkLogo/DarkLogo';
 
 export default function MyApp({ Component, pageProps }) {
 	const [isDarkTheme, setIsDarkTheme] = useState(true);
