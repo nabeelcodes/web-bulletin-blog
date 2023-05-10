@@ -182,4 +182,3 @@ export const AllBlogsListContainer = styled.section`
 		width: 90%;
 	}
 `;
-

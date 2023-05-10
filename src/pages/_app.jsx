@@ -98,6 +98,7 @@ export default function MyApp({ Component, pageProps }) {
 
 				<button
 					className='themeToggler'
+					aria-label='theme toggle button'
 					onClick={() => setIsDarkTheme((prevState) => !prevState)}
 				>
 					{isDarkTheme ? <LightLogo /> : <DarkLogo />}

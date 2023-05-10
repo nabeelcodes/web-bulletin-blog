@@ -41,7 +41,8 @@ export const StyledLi = styled.li`
 	color: ${({ theme }) => theme.colors.inactive};
 	padding: 0.75rem 1rem;
 	cursor: pointer;
-	font-weight: 700;
+	font-weight: 620;
+	letter-spacing: 1.25px;
 	text-transform: uppercase;
 	border-radius: 5px;
 	transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
@@ -49,7 +50,7 @@ export const StyledLi = styled.li`
 	${({ activeLink }) =>
 		activeLink
 			? css`
-					color: ${({ theme }) => theme.colors.active};
+					color: ${({ theme }) => theme.colors.secondaryAccent};
 			  `
 			: css`
 					@media ${({ theme }) => theme.breakpoints.hover} {

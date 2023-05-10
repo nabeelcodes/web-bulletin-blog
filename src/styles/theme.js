@@ -54,7 +54,7 @@ export const darkTheme = {
 		borderAnimationPeach: '#553833',
 		background: '#242526',
 		fontColor: '#ffffffd4',
-		inactive: '#727272',
+		inactive: '#b5b5b5',
 		active: '#e3e3e3',
 		codeBackground: 'rgba(242, 242, 242, 0.9)'
 	},

@@ -93,6 +93,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .themeToggler {
+    display: grid;
+    place-content: center;
 		cursor: pointer;
 		position: fixed;
 		left: 0;
