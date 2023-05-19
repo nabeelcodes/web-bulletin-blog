@@ -1,18 +1,28 @@
 import ReactMarkdown from 'react-markdown';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
-import githubGist from 'react-syntax-highlighter/dist/cjs/styles/hljs/github-gist';
+import codeTheme from 'react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-light';
 import remarkGfm from 'remark-gfm';
 import remarkHeadingId from 'remark-heading-id';
 import { StyledMarkdownContent } from './MarkdownContent.styled';
 
+/*
+Refer to React-Syntax-Highlighter light build guide on :
+https://github.com/react-syntax-highlighter/react-syntax-highlighter#light-build
+for independent language support
+
+example:
+import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
 SyntaxHighlighter.registerLanguage('javascript', js);
+
+Currently, not using this as issue seems to be fixed only
+by using `atom-one-light` theme
+*/
 
 const CodeHighlight = ({ inline, className, children }) => {
 	return !inline ? (
 		/* parsing code into Syntax Highlighter only if inline: false i.e. for multiline code */
 		<SyntaxHighlighter
-			style={githubGist}
+			style={codeTheme}
 			language={className}
 			wrapLines={true}
 			PreTag='div'
