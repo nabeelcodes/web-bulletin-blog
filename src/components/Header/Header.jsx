@@ -24,21 +24,21 @@ export default function Header() {
 
 				<div className='navMenu'>
 					<ul>
-						<Link href='/blogs'>
-							<a aria-label='link to blogs page'>
-								<StyledLi activeLink={useCheckUrlPath('/blogs')}>
+						<StyledLi activeLink={useCheckUrlPath('/blogs')}>
+							<Link href='/blogs'>
+								<a aria-label='To Blogs, clicking this link will redirect the website to the all blogs page'>
 									<span>Blogs</span>
-								</StyledLi>
-							</a>
-						</Link>
+								</a>
+							</Link>
+						</StyledLi>
 
-						<Link href='/about'>
-							<a aria-label='link to about page'>
-								<StyledLi activeLink={useCheckUrlPath('/about')}>
+						<StyledLi activeLink={useCheckUrlPath('/about')}>
+							<Link href='/about'>
+								<a aria-label='To About, clicking this link will redirect the website to the about page'>
 									<span>About</span>
-								</StyledLi>
-							</a>
-						</Link>
+								</a>
+							</Link>
+						</StyledLi>
 					</ul>
 				</div>
 			</Container>
