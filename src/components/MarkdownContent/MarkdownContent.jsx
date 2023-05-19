@@ -5,14 +5,22 @@ import remarkGfm from 'remark-gfm';
 import remarkHeadingId from 'remark-heading-id';
 import { StyledMarkdownContent } from './MarkdownContent.styled';
 
+import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
+import json from 'react-syntax-highlighter/dist/cjs/languages/hljs/json';
+import xml from 'react-syntax-highlighter/dist/cjs/languages/hljs/xml';
+import yaml from 'react-syntax-highlighter/dist/cjs/languages/hljs/yaml';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('json', json);
+SyntaxHighlighter.registerLanguage('xml', xml);
+SyntaxHighlighter.registerLanguage('yaml', yaml);
+
 /*
 Refer to React-Syntax-Highlighter light build guide on :
 https://github.com/react-syntax-highlighter/react-syntax-highlighter#light-build
 for independent language support
 
 example:
-import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
-SyntaxHighlighter.registerLanguage('javascript', js);
 
 Currently, not using this as issue seems to be fixed only
 by using `atom-one-light` theme
