@@ -1,9 +1,12 @@
 import ReactMarkdown from 'react-markdown';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
+import githubGist from 'react-syntax-highlighter/dist/cjs/styles/hljs/github-gist';
 import remarkGfm from 'remark-gfm';
 import remarkHeadingId from 'remark-heading-id';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { githubGist } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { StyledMarkdownContent } from './MarkdownContent.styled';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
 
 const CodeHighlight = ({ inline, className, children }) => {
 	return !inline ? (

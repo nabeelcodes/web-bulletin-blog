@@ -10,6 +10,7 @@
 		"postbuild": "next-sitemap"
 	},
 	"dependencies": {
+		"@next/bundle-analyzer": "^13.4.3",
 		"@supabase/supabase-js": "^2.2.0",
 		"@types/react": "^18.0.14",
 		"framer-motion": "^9.0.2",
