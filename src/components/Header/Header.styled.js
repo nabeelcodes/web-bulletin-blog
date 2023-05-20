@@ -24,15 +24,16 @@ export const StyledHeader = styled.header`
 
 	@media ${({ theme }) => theme.breakpoints.sm} {
 		nav {
-			width: 91%;
+			width: 95%;
 		}
 
 		.navMenu ul {
 			gap: 0;
+		}
 
-			li:nth-child(2) {
-				padding-inline: 0.3rem;
-			}
+		li:last-child span {
+			padding-left: 0;
+			padding-right: 0.6rem;
 		}
 	}
 `;
