@@ -14,13 +14,15 @@ import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript';
 import json from 'react-syntax-highlighter/dist/cjs/languages/hljs/json';
 import xml from 'react-syntax-highlighter/dist/cjs/languages/hljs/xml';
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/hljs/yaml';
+import css from 'react-syntax-highlighter/dist/cjs/languages/hljs/css';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 SyntaxHighlighter.registerLanguage('json', json);
 SyntaxHighlighter.registerLanguage('xml', xml);
 SyntaxHighlighter.registerLanguage('yaml', yaml);
+SyntaxHighlighter.registerLanguage('css', css);
 
-const CodeHighlight = ({ inline, className, children }) => {
+const codeHighlight = ({ inline, className, children }) => {
 	return !inline ? (
 		/* parsing code into Syntax Highlighter only if inline: false i.e. for multiline code */
 		<SyntaxHighlighter
@@ -42,7 +44,7 @@ export default function MarkdownContent({ contentToParse }) {
 		<StyledMarkdownContent>
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm, remarkHeadingId, { singleTilde: false }]}
-				components={{ code: CodeHighlight }}
+				components={{ code: codeHighlight }}
 			>
 				{contentToParse}
 			</ReactMarkdown>
