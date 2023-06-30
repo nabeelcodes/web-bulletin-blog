@@ -48,14 +48,15 @@ export const StyledTopPickCard = styled.article`
 		}
 
 		h2 {
-			font-size: clamp(1.25rem, 2.8vw, 2.3rem);
+			font-size: clamp(1.75rem, 2.8vw, 2.3rem);
+			font-weight: 500;
 			margin-top: 0.8rem;
 		}
 
 		p {
-			opacity: 0.6;
-			font-weight: 500;
+			font-weight: 300;
 			margin-top: 0.8rem;
+			opacity: 0.6;
 		}
 	}
 `;

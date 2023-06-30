@@ -69,8 +69,10 @@ export const StyledMarkdownContent = styled.article`
 
 	p,
 	li {
-		font-size: 1.12rem;
-		line-height: 1.7rem;
+		font-size: 1.2rem;
+		/* font-size: clamp(16px, 13.1830985915px + 0.5633802817vw, 24px); */
+		font-weight: 300;
+		line-height: 2rem;
 	}
 
 	& > ul,
@@ -96,10 +98,20 @@ export const StyledMarkdownContent = styled.article`
 	}
 
 	h2 {
-		font-size: 1.5rem;
+		font-size: 2rem;
 		font-weight: 550;
 		margin-top: 2rem;
 		margin-bottom: 1rem;
+	}
+
+	h3 {
+		font-size: 1.7rem;
+		font-weight: 400;
+	}
+
+	h4 {
+		font-size: 1.4rem;
+		font-weight: 380;
 	}
 
 	.left {
@@ -122,7 +134,8 @@ export const StyledMarkdownContent = styled.article`
 
 		p,
 		li {
-			font-size: 1rem;
+			font-size: 1.15rem;
+			line-height: 1.7rem;
 		}
 	}
 `;

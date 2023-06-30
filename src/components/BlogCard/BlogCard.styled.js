@@ -8,13 +8,18 @@ export const StyledBlogCard = styled.article`
 	cursor: pointer;
 
 	h3 {
-		font-size: 1.35rem;
+		font-size: 1.5rem;
+		font-weight: 500;
 	}
 
 	p {
-		opacity: 70%;
-		line-height: 1.35rem;
+		line-height: 1.5rem;
+		font-weight: 200;
 		margin-top: 1rem;
+
+		strong {
+			font-weight: 500;
+		}
 	}
 
 	${({ gradientEffects }) =>
@@ -23,6 +28,7 @@ export const StyledBlogCard = styled.article`
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			gap: 1rem;
 			background-color: ${({ theme }) => theme.colors.background};
 			border-radius: 6px;
 			position: relative;
@@ -71,11 +77,12 @@ export const StyledBlogCard = styled.article`
 
 			.summary {
 				h3 {
-					font-size: 1.7rem;
+					font-size: 2rem;
 				}
 
 				p {
 					font-size: 1.05rem;
+					font-weight: 200;
 				}
 			}
 
@@ -107,6 +114,19 @@ export const StyledBlogCard = styled.article`
 				span {
 					font-weight: 500;
 					font-size: 0.9rem;
+				}
+			}
+
+			@media ${({ theme }) => theme.breakpoints.sm} {
+				.summary {
+					h3 {
+						font-size: 1.8rem;
+					}
+
+					p {
+						font-size: 1rem;
+						font-weight: 200;
+					}
 				}
 			}
 		`};

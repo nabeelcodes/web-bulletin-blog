@@ -6,7 +6,8 @@ import useCheckUrlPath from 'hooks/useCheckUrlPath';
 export default function BlogCard({ blogDetails }) {
 	const { title, description, content, published_on } = blogDetails;
 	const blogPublishingDate = new Date(published_on).toString().slice(0, 15);
-	const readingStats = readingTime(content ? content : 'foobar');
+	const shortDescription = description.split(' ').slice(0, 20).join(' ');
+	const readingStats = readingTime(content ? content : ' ');
 	const onBlogsPage = useCheckUrlPath('/blogs');
 	const appTheme = useTheme();
 
@@ -14,7 +15,9 @@ export default function BlogCard({ blogDetails }) {
 		<StyledBlogCard gradientEffects={onBlogsPage}>
 			<div className='summary'>
 				<h3>{title}</h3>
-				<p>{description}</p>
+				<p>
+					{shortDescription} <strong>...read more</strong>
+				</p>
 			</div>
 
 			{onBlogsPage && (

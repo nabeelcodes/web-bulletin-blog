@@ -29,7 +29,7 @@ export const StyledBlogDetailsPage = styled.section`
 	}
 
 	.blogTitle {
-		font-size: clamp(1.75rem, 1.39rem + 1.79vw, 3rem);
+		font-size: clamp(2.5rem, 1.39rem + 1.79vw, 3rem);
 		font-weight: 480;
 	}
 
@@ -59,12 +59,12 @@ export const StyledBlogDetailsPage = styled.section`
 		top: 36px;
 
 		h3 {
-			font-size: 1.5rem;
+			font-size: 1.8rem;
 			font-weight: 500;
 			letter-spacing: 1.5px;
 			margin-top: 1.12rem;
 			margin-bottom: 1rem;
-			opacity: 0.75;
+			/* opacity: 0.75; */
 		}
 
 		div {
@@ -78,6 +78,9 @@ export const StyledBlogDetailsPage = styled.section`
 		}
 
 		a {
+			/* font-size: 1.1rem; */
+			font-weight: 200;
+			letter-spacing: 0.8px;
 			display: block;
 			padding: 1rem;
 			opacity: 0.7;
