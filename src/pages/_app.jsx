@@ -14,6 +14,11 @@ export default function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<Head>
+				{/* `initial-scale=1.0` was missing by default */}
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1.0'
+				/>
 				{/* SEO TAGS */}
 				<meta
 					name='robots'
