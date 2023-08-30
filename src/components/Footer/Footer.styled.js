@@ -1,35 +1,35 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-	height: 100px;
-	border-top: 1.5px solid ${({ theme }) => theme.colors.secondaryAccentLight};
+  height: 100px;
+  border-top: 1.5px solid ${({ theme }) => theme.colors.secondaryAccentLight};
 
-	.footBrand {
-		font-size: 1.5rem;
-		font-weight: 700;
-		padding-left: 0.7em;
-	}
+  .footBrand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 0.7em;
+  }
 
-	.footMenu {
-		display: flex;
-		gap: 2rem;
+  .footMenu {
+    display: flex;
+    gap: 2rem;
 
-		svg {
-			cursor: pointer;
-		}
-	}
+    svg {
+      cursor: pointer;
+    }
+  }
 
-	@media ${({ theme }) => theme.breakpoints.sm} {
-		.footerContainer {
-			width: 85%;
-		}
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    .footerContainer {
+      width: 85%;
+    }
 
-		.footBrand {
-			padding-left: unset;
-		}
+    .footBrand {
+      padding-left: unset;
+    }
 
-		.footMenu {
-			gap: 1rem;
-		}
-	}
+    .footMenu {
+      gap: 1rem;
+    }
+  }
 `;

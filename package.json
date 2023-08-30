@@ -1,38 +1,40 @@
 {
-	"name": "web-bulletin-blog",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"postbuild": "next-sitemap"
-	},
-	"dependencies": {
-		"@next/bundle-analyzer": "^13.4.3",
-		"@supabase/supabase-js": "^2.2.0",
-		"@types/react": "^18.0.14",
-		"framer-motion": "^9.0.2",
-		"markdown-parser": "^0.0.8",
-		"next": "12.1.6",
-		"next-sitemap": "^3.1.52",
-		"nextjs-progressbar": "^0.0.16",
-		"react": "18.1.0",
-		"react-dom": "18.1.0",
-		"react-is": "^18.2.0",
-		"react-markdown": "^8.0.3",
-		"react-syntax-highlighter": "^15.5.0",
-		"reading-time": "^1.5.0",
-		"remark-gfm": "^3.0.1",
-		"remark-heading-id": "^1.0.0",
-		"sharp": "^0.30.7",
-		"styled-components": "^5.3.5",
-		"styled-normalize": "^8.0.7",
-		"typescript": "^4.7.4"
-	},
-	"devDependencies": {
-		"eslint": "8.17.0",
-		"eslint-config-next": "12.1.6"
-	}
+  "name": "web-bulletin-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^13.4.3",
+    "@supabase/supabase-js": "^2.2.0",
+    "@types/react": "^18.0.14",
+    "framer-motion": "^9.0.2",
+    "markdown-parser": "^0.0.8",
+    "next": "12.1.6",
+    "next-sitemap": "^3.1.52",
+    "nextjs-progressbar": "^0.0.16",
+    "prettier": "^3.0.3",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-is": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "reading-time": "^1.5.0",
+    "remark-gfm": "^3.0.1",
+    "remark-heading-id": "^1.0.0",
+    "sharp": "^0.30.7",
+    "styled-components": "^5.3.5",
+    "styled-normalize": "^8.0.7",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
+  }
 }
