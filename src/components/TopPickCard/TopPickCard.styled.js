@@ -1,62 +1,58 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledTopPickCard = styled.article`
-  fieldset {
-    cursor: pointer;
-    margin-bottom: 2.8rem;
-    padding: 1.3rem 1.5rem;
-    border-radius: 10px;
-    border: 3px solid ${({ theme }) => theme.colors.secondaryAccentLight};
+	grid-column: span 8;
 
-    @media ${({ theme }) => theme.breakpoints.sm} {
-      padding: 1rem 0.7rem 1.3rem;
-    }
-  }
+	.outerContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 2rem;
+	}
 
-  legend {
-    opacity: 0.8;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding-inline: 0.5rem;
-  }
+	.imageContainerWrapper {
+		overflow: hidden;
+	}
 
-  .outerContainer {
-    gap: 1.6rem;
+	.innerContainer {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
 
-    img {
-      border-radius: 10px;
-    }
+		h2 {
+			grid-column: span 6;
+			font-size: clamp(1.75rem, 2.8vw, 3rem);
+			font-weight: 600;
+			letter-spacing: -0.03rem;
+		}
 
-    @media ${({ theme }) => theme.breakpoints.ipad} {
-      flex-direction: column;
-    }
-  }
+		p {
+			font-weight: 300;
+			opacity: 0.6;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
 
-  .imageContainerWrapper {
-    overflow: hidden;
-    border-radius: 10px;
-  }
+		.readMoreContainer {
+			grid-column: 9 / span 4;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 
-  .innerContainer {
-    time {
-      display: inline-block;
-      background-color: ${({ theme }) => theme.colors.secondaryAccentLight};
-      color: ${({ theme }) => theme.colors.secondaryAccent};
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-    }
-
-    h2 {
-      font-size: clamp(1.75rem, 2.8vw, 2.3rem);
-      font-weight: 500;
-      margin-top: 0.8rem;
-    }
-
-    p {
-      font-weight: 300;
-      margin-top: 0.8rem;
-      opacity: 0.6;
-    }
-  }
+		a {
+			align-self: flex-start;
+			display: block;
+			cursor: pointer;
+			border: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 0.5rem;
+			font-size: 0.8rem;
+			padding: 0.8rem 1.2rem;
+			background-color: ${({ theme }) => theme.colors.secondaryAccent};
+			color: ${({ theme }) => theme.colors.fontColor};
+		}
+	}
 `;
