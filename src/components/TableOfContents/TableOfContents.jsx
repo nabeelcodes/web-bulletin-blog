@@ -17,14 +17,9 @@ export default function TableOfContents({ parsedHeadingIds }) {
 
 	useEffect(() => {
 		// insert proper comment
-		const headingNodesH2 = document.querySelectorAll(
-			'#main-content-body h2[id]'
+		const headingNodes = document.querySelectorAll(
+			'#main-content-body h2, #main-content-body h3, #main-content-body h4, #main-content-body h5, #main-content-body h6'
 		);
-		const headingNodesH3 = document.querySelectorAll(
-			'#main-content-body h3[id]'
-		);
-
-		const allHeadingNodes = [...headingNodesH2, ...headingNodesH3];
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -37,7 +32,7 @@ export default function TableOfContents({ parsedHeadingIds }) {
 			}
 		);
 
-		allHeadingNodes.forEach((node) => observer.observe(node));
+		headingNodes.forEach((node) => observer.observe(node));
 
 		return () => {
 			observer.disconnect();
