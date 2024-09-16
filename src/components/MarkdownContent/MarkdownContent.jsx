@@ -22,8 +22,11 @@ SyntaxHighlighter.registerLanguage('xml', xml);
 SyntaxHighlighter.registerLanguage('yaml', yaml);
 SyntaxHighlighter.registerLanguage('css', css);
 
-const codeHighlight = ({ inline, className, children }) => {
-	return !inline ? (
+const codeHighlight = ({ inline: codeBlockIsInline, className, children }) => {
+	return codeBlockIsInline ? (
+		/* generic parsing for single line code */
+		<code className={className}>{children[0]}</code>
+	) : (
 		/* parsing code into Syntax Highlighter only if inline: false i.e. for multiline code */
 		<SyntaxHighlighter
 			style={codeTheme}
@@ -33,9 +36,6 @@ const codeHighlight = ({ inline, className, children }) => {
 		>
 			{children[0]}
 		</SyntaxHighlighter>
-	) : (
-		/* generic parsing for single line code */
-		<code className={className}>{children[0]}</code>
 	);
 };
 

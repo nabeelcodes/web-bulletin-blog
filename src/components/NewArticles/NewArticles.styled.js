@@ -6,6 +6,10 @@ export const StyledNewArticles = styled.div`
 	background-color: #121212;
 	padding: 2rem;
 
+	@media ${({ theme }) => theme.breakpoints.lg} {
+		grid-column: span 12;
+	}
+
 	.title {
 		color: ${({ theme }) => theme.colors.secondaryAccent};
 		font-size: clamp(1.75rem, 2.8vw, 2.3rem);

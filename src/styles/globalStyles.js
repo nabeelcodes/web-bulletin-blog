@@ -98,7 +98,7 @@ export const GlobalStyles = createGlobalStyle`
 		cursor: pointer;
 		position: fixed;
 		left: 0;
-		bottom: 25%;
+		bottom: 18.5%;
 		padding: 0.5rem 0.8rem;
 		background-color: ${({ theme }) => theme.colors.secondaryAccent};
 		border: none;

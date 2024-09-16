@@ -30,8 +30,8 @@ export default function TopPickCard({ blogDetails }) {
 							alt={alternativeText}
 							priority={true}
 							quality={100}
-							width={1800}
 							height={750}
+							width={1500}
 							objectFit='cover'
 							placeholder='blur'
 							blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMsKCxYCgAEogH4UW6p2wAAAABJRU5ErkJggg=='

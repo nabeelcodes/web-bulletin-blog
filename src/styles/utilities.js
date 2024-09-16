@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
 	height: ${({ height }) => height ?? '100%'};
@@ -35,6 +34,10 @@ export const Container = styled.div`
 				grid-template-columns: repeat(12, 1fr);
 				gap: 2rem;
 				align-items: start;
+
+				@media ${({ theme }) => theme.breakpoints.lg} {
+					grid-template-columns: repeat(6, 1fr);
+				}
 			}
 		`};
 
