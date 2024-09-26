@@ -33,7 +33,6 @@ export const StyledTopPickCard = styled.article`
 
 			@media ${({ theme }) => theme.breakpoints.lg} {
 				grid-column: span 12;
-				/* text-align: justify; */
 			}
 		}
 
@@ -59,20 +58,58 @@ export const StyledTopPickCard = styled.article`
 
 		a {
 			align-self: flex-start;
+			position: relative;
 			display: block;
 			cursor: pointer;
-			border: none;
+			border-radius: 1px;
 			text-transform: uppercase;
 			font-weight: 800;
 			letter-spacing: 0.5rem;
 			font-size: 0.8rem;
 			padding: 0.8rem 1.2rem;
+			transition: padding 0.2s linear;
 			background-color: ${({ theme }) => theme.colors.secondaryAccent};
 			color: ${({ theme }) => theme.colors.background};
+
+			.chevronRight {
+				position: absolute;
+				top: 23%;
+				right: -15%;
+				opacity: 0;
+				transition: all 0.2s linear;
+
+				svg {
+					width: 20px;
+					height: 20px;
+					fill: ${({ theme }) => theme.colors.background};
+					stroke: ${({ theme }) => theme.colors.background};
+					stroke-width: 3px;
+				}
+			}
+
+			@media ${({ theme }) => theme.breakpoints.hover} {
+				&:hover {
+					padding-right: 2.2rem;
+
+					.chevronRight {
+						right: 6%;
+						opacity: 1;
+					}
+				}
+			}
 
 			@media ${({ theme }) => theme.breakpoints.lg} {
 				align-self: unset;
 				text-align: center;
+				transition: none;
+
+				.chevronRight {
+					display: none;
+				}
+
+				&:hover {
+					padding-right: 1.2rem;
+				}
 			}
 		}
 	}

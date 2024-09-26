@@ -4,6 +4,27 @@ import { Container } from 'styles/utilities';
 import { StyledTopPickCard } from './TopPickCard.styled';
 import { motion } from 'framer-motion';
 
+export const ChevronRight = () => {
+	return (
+		<span className='chevronRight'>
+			<svg
+				viewBox='0 0 23 23'
+				fill='none'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<g>
+					<path
+						id='Vector'
+						d='M21 12L16 7M21 12L16 17M21 12H3'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+					/>
+				</g>
+			</svg>
+		</span>
+	);
+};
+
 export default function TopPickCard({ blogDetails }) {
 	const { id, title, description, images } = blogDetails;
 	const { url, alternativeText } = images?.banner_image;
@@ -48,7 +69,10 @@ export default function TopPickCard({ blogDetails }) {
 							key={id}
 							href={`/blogs/${id}-${shallowUrl}`}
 						>
-							<a>read more</a>
+							<a>
+								read more
+								<ChevronRight />
+							</a>
 						</Link>
 					</div>
 				</Container>

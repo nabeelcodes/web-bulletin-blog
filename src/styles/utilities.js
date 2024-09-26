@@ -23,6 +23,7 @@ export const Container = styled.div`
 				margin: 2rem 0;
 				opacity: 0.8;
 				font-size: 1.4rem;
+				color: ${({ theme }) => theme.colors.secondaryAccent};
 			}
 
 			@media ${({ theme }) => theme.breakpoints.sm} {

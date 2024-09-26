@@ -28,6 +28,12 @@ export const StyledNewArticles = styled.div`
 	.postTitle {
 		font-size: clamp(1rem, 2.8vw, 1.35rem);
 		margin-bottom: 0.75rem;
+
+		@media ${({ theme }) => theme.breakpoints.hover} {
+			&:hover {
+				color: ${({ theme }) => theme.colors.secondaryAccent};
+			}
+		}
 	}
 
 	.postDescription {

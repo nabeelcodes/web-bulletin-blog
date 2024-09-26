@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import TopPickCard from 'components/TopPickCard/TopPickCard';
+import TopPickCard, { ChevronRight } from 'components/TopPickCard/TopPickCard';
 import NewArticles from 'components/NewArticles/NewArticles';
 import BlogCard from 'components/BlogCard/BlogCard';
 import { Container } from 'styles/utilities';
@@ -29,7 +29,7 @@ export default function Home({ blogs }) {
 					blogListContainer
 				>
 					{blogs.length > 0 &&
-						blogs.slice(4).map((blog) => {
+						blogs.slice(5).map((blog) => {
 							const regexPatternToReplace = /(,+ )|\.|,|\' | \'|\'|\/| |\?/gm;
 							const shallowUrl = blog?.title
 								.replaceAll(regexPatternToReplace, '-')
@@ -52,22 +52,7 @@ export default function Home({ blogs }) {
 							<div className='linkToAllBlogsPage'>
 								<button>
 									see more
-									<span className='chevronRight'>
-										<svg
-											viewBox='0 0 23 23'
-											fill='none'
-											xmlns='http://www.w3.org/2000/svg'
-										>
-											<g id='Arrow / Arrow_Right_LG'>
-												<path
-													id='Vector'
-													d='M21 12L16 7M21 12L16 17M21 12H3'
-													strokeLinecap='round'
-													strokeLinejoin='round'
-												/>
-											</g>
-										</svg>
-									</span>
+									<ChevronRight />
 								</button>
 							</div>
 						</a>
