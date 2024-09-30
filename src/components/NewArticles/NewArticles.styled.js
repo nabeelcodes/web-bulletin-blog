@@ -17,6 +17,16 @@ export const StyledNewArticles = styled.div`
 		margin-bottom: 2rem;
 	}
 
+	.post-link {
+		@media ${({ theme }) => theme.breakpoints.hover} {
+			&:hover {
+				.postTitle {
+					color: ${({ theme }) => theme.colors.secondaryAccent};
+				}
+			}
+		}
+	}
+
 	.post-link:not(:last-of-type) {
 		display: block;
 		padding-bottom: 1.5rem;
@@ -28,12 +38,6 @@ export const StyledNewArticles = styled.div`
 	.postTitle {
 		font-size: clamp(1rem, 2.8vw, 1.35rem);
 		margin-bottom: 0.75rem;
-
-		@media ${({ theme }) => theme.breakpoints.hover} {
-			&:hover {
-				color: ${({ theme }) => theme.colors.secondaryAccent};
-			}
-		}
 	}
 
 	.postDescription {

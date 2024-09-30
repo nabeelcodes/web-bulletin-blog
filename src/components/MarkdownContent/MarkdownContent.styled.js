@@ -16,9 +16,11 @@ export const StyledMarkdownContent = styled.article`
 	}
 
 	pre div {
-		background-color: ${({ theme }) => theme.colors.codeBackground} !important;
+		border: 2px solid gray;
+		color: ${({ theme }) => theme.colors.fontColor} !important;
+		background-color: ${({ theme }) => theme.colors.background} !important;
 		font-size: 0.85em;
-		border-radius: 3px;
+		border-radius: 5px;
 	}
 
 	pre code {
