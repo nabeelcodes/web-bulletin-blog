@@ -1,47 +1,47 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledNewArticles = styled.div`
-	grid-column: span 4;
-	color: rgba(255, 255, 255, 0.8);
-	background-color: #121212;
-	padding: 2rem;
+  grid-column: span 4;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #121212;
+  padding: 2rem;
 
-	@media ${({ theme }) => theme.breakpoints.lg} {
-		grid-column: span 12;
-	}
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    grid-column: span 12;
+  }
 
-	.title {
-		color: ${({ theme }) => theme.colors.secondaryAccent};
-		font-size: clamp(1.75rem, 2.8vw, 2.3rem);
-		font-weight: 500;
-		margin-bottom: 2rem;
-	}
+  .title {
+    color: ${({ theme }) => theme.colors.secondaryAccent};
+    font-size: clamp(1.75rem, 2.8vw, 2.3rem);
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
 
-	.post-link {
-		@media ${({ theme }) => theme.breakpoints.hover} {
-			&:hover {
-				.postTitle {
-					color: ${({ theme }) => theme.colors.secondaryAccent};
-				}
-			}
-		}
-	}
+  .post-link {
+    @media ${({ theme }) => theme.breakpoints.hover} {
+      &:hover {
+        .postTitle {
+          color: ${({ theme }) => theme.colors.secondaryAccent};
+        }
+      }
+    }
+  }
 
-	.post-link:not(:last-of-type) {
-		display: block;
-		padding-bottom: 1.5rem;
-		margin-bottom: 1.5rem;
-		cursor: pointer;
-		border-bottom: 1px solid rgba(265, 265, 265, 0.3);
-	}
+  .post-link:not(:last-of-type) {
+    display: block;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(265, 265, 265, 0.3);
+  }
 
-	.postTitle {
-		font-size: clamp(1rem, 2.8vw, 1.35rem);
-		margin-bottom: 0.75rem;
-	}
+  .postTitle {
+    font-size: clamp(1rem, 2.8vw, 1.35rem);
+    margin-bottom: 0.75rem;
+  }
 
-	.postDescription {
-		font-size: 1rem;
-		color: gray;
-	}
+  .postDescription {
+    font-size: 1rem;
+    color: gray;
+  }
 `;
